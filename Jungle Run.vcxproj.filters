@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Resource Files\Character animation">
+      <UniqueIdentifier>{7abfa664-92df-493d-a70c-2c2d162df161}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Character animation\Idle">
+      <UniqueIdentifier>{0a23e5f5-f8d1-42dc-ab08-fcf12d3a3aec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Character animation\Run">
+      <UniqueIdentifier>{a5f66b46-3885-48d7-b652-6b18a8692d9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Character animation\Ledge Grab">
+      <UniqueIdentifier>{8ef21bff-a56e-42dd-92b7-da60727a5479}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Character animation\Jump">
+      <UniqueIdentifier>{b9ee5dea-d33b-4208-88f3-ce311ed3cb89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Background">
+      <UniqueIdentifier>{780be028-ff46-4a41-8582-9d23e4522104}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Platform">
+      <UniqueIdentifier>{7f4023d5-dd01-46a4-bea3-26349460193a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Golem">
+      <UniqueIdentifier>{3d102f4a-fa77-409d-ac2a-99f80f084d4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Fonts">
+      <UniqueIdentifier>{23b84e89-fd79-480e-8cc1-18ced2498a04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\map">
+      <UniqueIdentifier>{0acbb85c-88c9-4436-931a-132d1d6b03a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\load">
+      <UniqueIdentifier>{b0e7f9a0-86ad-42ea-bea0-c9165a297e8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\collision handling">
+      <UniqueIdentifier>{e38afb9a-a208-45c7-abe6-10558acee465}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\common functions">
+      <UniqueIdentifier>{ebb31288-0d99-4634-88c8-dfa37e7f2ca2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\render">
+      <UniqueIdentifier>{a0ca499d-fb11-4b6a-8bd6-68a0401f35a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\menu">
+      <UniqueIdentifier>{caa3e7ca-26db-43d5-a86b-8c1febb65c94}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="map.c">
+      <Filter>Source Files\map</Filter>
+    </ClCompile>
+    <ClCompile Include="load.c">
+      <Filter>Source Files\load</Filter>
+    </ClCompile>
+    <ClCompile Include="collision_handling.c">
+      <Filter>Source Files\collision handling</Filter>
+    </ClCompile>
+    <ClCompile Include="common_functions.c">
+      <Filter>Source Files\common functions</Filter>
+    </ClCompile>
+    <ClCompile Include="render.c">
+      <Filter>Source Files\render</Filter>
+    </ClCompile>
+    <ClCompile Include="menu.c">
+      <Filter>Source Files\menu</Filter>
+    </ClCompile>
+    <ClCompile Include="help.c">
+      <Filter>Source Files\menu</Filter>
+    </ClCompile>
+    <ClCompile Include="preGameplay.c">
+      <Filter>Source Files\menu</Filter>
+    </ClCompile>
+    <ClCompile Include="checkAccount.c">
+      <Filter>Source Files\menu</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="defs.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="structs.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="map.h">
+      <Filter>Source Files\map</Filter>
+    </ClInclude>
+    <ClInclude Include="load.h">
+      <Filter>Source Files\load</Filter>
+    </ClInclude>
+    <ClInclude Include="collision_handling.h">
+      <Filter>Source Files\collision handling</Filter>
+    </ClInclude>
+    <ClInclude Include="common_functions.h">
+      <Filter>Source Files\common functions</Filter>
+    </ClInclude>
+    <ClInclude Include="render.h">
+      <Filter>Source Files\render</Filter>
+    </ClInclude>
+    <ClInclude Include="menu.h">
+      <Filter>Source Files\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="help.h">
+      <Filter>Source Files\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="preGameplay.h">
+      <Filter>Source Files\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="checkAccount.h">
+      <Filter>Source Files\menu</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resource\Character\Idle\Idle_1.png">
+      <Filter>Resource Files\Character animation\Idle</Filter>
+    </Image>
+    <Image Include="Resource\Character\Idle\Idle_2.png">
+      <Filter>Resource Files\Character animation\Idle</Filter>
+    </Image>
+    <Image Include="Resource\Character\Idle\Idle_3.png">
+      <Filter>Resource Files\Character animation\Idle</Filter>
+    </Image>
+    <Image Include="Resource\Character\Idle\Idle_4.png">
+      <Filter>Resource Files\Character animation\Idle</Filter>
+    </Image>
+    <Image Include="Resource\Character\Idle\Idle_5.png">
+      <Filter>Resource Files\Character animation\Idle</Filter>
+    </Image>
+    <Image Include="Resource\Character\Idle\Idle_7.png">
+      <Filter>Resource Files\Character animation\Idle</Filter>
+    </Image>
+    <Image Include="Resource\Character\Idle\Idle_6.png">
+      <Filter>Resource Files\Character animation\Idle</Filter>
+    </Image>
+    <Image Include="Resource\Character\Idle\Idle_8.png">
+      <Filter>Resource Files\Character animation\Idle</Filter>
+    </Image>
+    <Image Include="Resource\Character\Idle\Idle_9.png">
+      <Filter>Resource Files\Character animation\Idle</Filter>
+    </Image>
+    <Image Include="Resource\Character\Idle\Idle_10.png">
+      <Filter>Resource Files\Character animation\Idle</Filter>
+    </Image>
+    <Image Include="Resource\Character\Idle\Idle_12.png">
+      <Filter>Resource Files\Character animation\Idle</Filter>
+    </Image>
+    <Image Include="Resource\Character\Idle\Idle_11.png">
+      <Filter>Resource Files\Character animation\Idle</Filter>
+    </Image>
+    <Image Include="Resource\Character\Ledge Grab\Ledge Grab_0.png">
+      <Filter>Resource Files\Character animation\Ledge Grab</Filter>
+    </Image>
+    <Image Include="Resource\Character\Ledge Grab\Ledge Grab_1.png">
+      <Filter>Resource Files\Character animation\Ledge Grab</Filter>
+    </Image>
+    <Image Include="Resource\Character\Ledge Grab\Ledge Grab_2.png">
+      <Filter>Resource Files\Character animation\Ledge Grab</Filter>
+    </Image>
+    <Image Include="Resource\Character\Ledge Grab\Ledge Grab_3.png">
+      <Filter>Resource Files\Character animation\Ledge Grab</Filter>
+    </Image>
+    <Image Include="Resource\Character\Ledge Grab\Ledge Grab_4.png">
+      <Filter>Resource Files\Character animation\Ledge Grab</Filter>
+    </Image>
+    <Image Include="Resource\Character\Ledge Grab\Ledge Grab_5.png">
+      <Filter>Resource Files\Character animation\Ledge Grab</Filter>
+    </Image>
+    <Image Include="Resource\Character\Jump\Jump_1.png">
+      <Filter>Resource Files\Character animation\Jump</Filter>
+    </Image>
+    <Image Include="Resource\Character\Jump\Jump_2.png">
+      <Filter>Resource Files\Character animation\Jump</Filter>
+    </Image>
+    <Image Include="Resource\Character\Jump\Jump_3.png">
+      <Filter>Resource Files\Character animation\Jump</Filter>
+    </Image>
+    <Image Include="Resource\Character\Jump\Jump_4.png">
+      <Filter>Resource Files\Character animation\Jump</Filter>
+    </Image>
+    <Image Include="Resource\Character\Run\Run_1.png">
+      <Filter>Resource Files\Character animation\Run</Filter>
+    </Image>
+    <Image Include="Resource\Character\Run\Run_2.png">
+      <Filter>Resource Files\Character animation\Run</Filter>
+    </Image>
+    <Image Include="Resource\Character\Run\Run_3.png">
+      <Filter>Resource Files\Character animation\Run</Filter>
+    </Image>
+    <Image Include="Resource\Character\Run\Run_4.png">
+      <Filter>Resource Files\Character animation\Run</Filter>
+    </Image>
+    <Image Include="Resource\Character\Run\Run_5.png">
+      <Filter>Resource Files\Character animation\Run</Filter>
+    </Image>
+    <Image Include="Resource\Character\Run\Run_6.png">
+      <Filter>Resource Files\Character animation\Run</Filter>
+    </Image>
+    <Image Include="Resource\Character\Run\Run_7.png">
+      <Filter>Resource Files\Character animation\Run</Filter>
+    </Image>
+    <Image Include="Resource\Character\Run\Run_8.png">
+      <Filter>Resource Files\Character animation\Run</Filter>
+    </Image>
+    <Image Include="Resource\Jungle Asset Pack\parallax background\plx-1.png">
+      <Filter>Resource Files\Background</Filter>
+    </Image>
+    <Image Include="Resource\Jungle Asset Pack\parallax background\plx-2.png">
+      <Filter>Resource Files\Background</Filter>
+    </Image>
+    <Image Include="Resource\Jungle Asset Pack\parallax background\plx-3.png">
+      <Filter>Resource Files\Background</Filter>
+    </Image>
+    <Image Include="Resource\Jungle Asset Pack\parallax background\plx-4.png">
+      <Filter>Resource Files\Background</Filter>
+    </Image>
+    <Image Include="Resource\Jungle Asset Pack\parallax background\plx-5.png">
+      <Filter>Resource Files\Background</Filter>
+    </Image>
+    <Image Include="Resource\Some Bullshit Platform\Platform 2.png">
+      <Filter>Resource Files\Platform</Filter>
+    </Image>
+    <Image Include="Resource\Some Bullshit Platform\Platform 3.png">
+      <Filter>Resource Files\Platform</Filter>
+    </Image>
+    <Image Include="Resource\Some Bullshit Platform\Platform 4.png">
+      <Filter>Resource Files\Platform</Filter>
+    </Image>
+    <Image Include="Resource\Some Bullshit Platform\Platform 5.png">
+      <Filter>Resource Files\Platform</Filter>
+    </Image>
+    <Image Include="Resource\Some Bullshit Platform\Platform 1.png">
+      <Filter>Resource Files\Platform</Filter>
+    </Image>
+    <Image Include="Resource\Mecha-stone Golem 0.1\PNG sheet\Character_sheet.png">
+      <Filter>Resource Files\Golem</Filter>
+    </Image>
+    <Image Include="Resource\Mecha-stone Golem 0.1\weapon PNG\arm_projectile.png">
+      <Filter>Resource Files\Golem</Filter>
+    </Image>
+    <Image Include="Resource\Mecha-stone Golem 0.1\weapon PNG\arm_projectile_glowing.png">
+      <Filter>Resource Files\Golem</Filter>
+    </Image>
+    <Image Include="Resource\Mecha-stone Golem 0.1\weapon PNG\Laser_sheet.png">
+      <Filter>Resource Files\Golem</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="Resource\Fonts\crazy-pixel.ttf">
+      <Filter>Resource Files\Fonts</Filter>
+    </Font>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,391 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Visual Studio 2022\\C\\Jungle Run\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|D:\\Visual Studio 2022\\C\\Jungle Run\\structs.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|solutionrelative:structs.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|D:\\Visual Studio 2022\\C\\Jungle Run\\menu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|solutionrelative:menu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|D:\\Visual Studio 2022\\C\\Jungle Run\\checkAccount.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|solutionrelative:checkAccount.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|D:\\Visual Studio 2022\\C\\Jungle Run\\render.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|solutionrelative:render.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|D:\\Visual Studio 2022\\C\\Jungle Run\\common_functions.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|solutionrelative:common_functions.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|D:\\Visual Studio 2022\\C\\Jungle Run\\common_functions.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|solutionrelative:common_functions.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|D:\\Visual Studio 2022\\C\\Jungle Run\\map.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|solutionrelative:map.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|D:\\Visual Studio 2022\\C\\Jungle Run\\load.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|solutionrelative:load.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|D:\\Visual Studio 2022\\C\\Jungle Run\\render.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|solutionrelative:render.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|D:\\Visual Studio 2022\\C\\Jungle Run\\main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|solutionrelative:main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|D:\\Visual Studio 2022\\C\\Jungle Run\\collision_handling.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|solutionrelative:collision_handling.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|D:\\Visual Studio 2022\\C\\Jungle Run\\checkAccount.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|solutionrelative:checkAccount.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|D:\\Visual Studio 2022\\C\\Jungle Run\\collision_handling.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|solutionrelative:collision_handling.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|D:\\Visual Studio 2022\\C\\Jungle Run\\load.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|solutionrelative:load.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|D:\\Visual Studio 2022\\C\\Jungle Run\\help.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|solutionrelative:help.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|D:\\Visual Studio 2022\\C\\Jungle Run\\preGameplay.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|solutionrelative:preGameplay.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|D:\\Visual Studio 2022\\C\\Jungle Run\\defs.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|solutionrelative:defs.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|D:\\Visual Studio 2022\\C\\Jungle Run\\map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|solutionrelative:map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|D:\\Visual Studio 2022\\C\\Jungle Run\\preGameplay.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|solutionrelative:preGameplay.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|D:\\Visual Studio 2022\\C\\Jungle Run\\menu.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|solutionrelative:menu.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|D:\\Visual Studio 2022\\C\\Jungle Run\\help.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{12A7E798-894E-4808-8FBB-B0BCD7CFB854}|Jungle Run.vcxproj|solutionrelative:help.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 382,
+          "SelectedChildIndex": 11,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{a80febb4-e7e0-4147-b476-21aaf2453969}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "render.c",
+              "DocumentMoniker": "D:\\Visual Studio 2022\\C\\Jungle Run\\render.c",
+              "RelativeDocumentMoniker": "render.c",
+              "ToolTip": "D:\\Visual Studio 2022\\C\\Jungle Run\\render.c",
+              "RelativeToolTip": "render.c",
+              "ViewState": "AQIAAF0AAAAAAAAAAAAAAA4AAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2023-04-11T14:20:07.726Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "load.h",
+              "DocumentMoniker": "D:\\Visual Studio 2022\\C\\Jungle Run\\load.h",
+              "RelativeDocumentMoniker": "load.h",
+              "ToolTip": "D:\\Visual Studio 2022\\C\\Jungle Run\\load.h",
+              "RelativeToolTip": "load.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2023-05-22T06:52:26.076Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "checkAccount.h",
+              "DocumentMoniker": "D:\\Visual Studio 2022\\C\\Jungle Run\\checkAccount.h",
+              "RelativeDocumentMoniker": "checkAccount.h",
+              "ToolTip": "D:\\Visual Studio 2022\\C\\Jungle Run\\checkAccount.h",
+              "RelativeToolTip": "checkAccount.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2023-05-22T06:52:22.108Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "menu.h",
+              "DocumentMoniker": "D:\\Visual Studio 2022\\C\\Jungle Run\\menu.h",
+              "RelativeDocumentMoniker": "menu.h",
+              "ToolTip": "D:\\Visual Studio 2022\\C\\Jungle Run\\menu.h",
+              "RelativeToolTip": "menu.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2023-05-22T06:52:15.835Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "preGameplay.h",
+              "DocumentMoniker": "D:\\Visual Studio 2022\\C\\Jungle Run\\preGameplay.h",
+              "RelativeDocumentMoniker": "preGameplay.h",
+              "ToolTip": "D:\\Visual Studio 2022\\C\\Jungle Run\\preGameplay.h",
+              "RelativeToolTip": "preGameplay.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2023-05-22T06:52:11.508Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "render.h",
+              "DocumentMoniker": "D:\\Visual Studio 2022\\C\\Jungle Run\\render.h",
+              "RelativeDocumentMoniker": "render.h",
+              "ToolTip": "D:\\Visual Studio 2022\\C\\Jungle Run\\render.h",
+              "RelativeToolTip": "render.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2023-05-22T06:52:04.547Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "help.h",
+              "DocumentMoniker": "D:\\Visual Studio 2022\\C\\Jungle Run\\help.h",
+              "RelativeDocumentMoniker": "help.h",
+              "ToolTip": "D:\\Visual Studio 2022\\C\\Jungle Run\\help.h",
+              "RelativeToolTip": "help.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2023-05-22T06:49:24.894Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "structs.h",
+              "DocumentMoniker": "D:\\Visual Studio 2022\\C\\Jungle Run\\structs.h",
+              "RelativeDocumentMoniker": "structs.h",
+              "ToolTip": "D:\\Visual Studio 2022\\C\\Jungle Run\\structs.h",
+              "RelativeToolTip": "structs.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADQAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2023-04-11T14:20:07.724Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "common_functions.h",
+              "DocumentMoniker": "D:\\Visual Studio 2022\\C\\Jungle Run\\common_functions.h",
+              "RelativeDocumentMoniker": "common_functions.h",
+              "ToolTip": "D:\\Visual Studio 2022\\C\\Jungle Run\\common_functions.h",
+              "RelativeToolTip": "common_functions.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2023-05-22T03:06:53.959Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "collision_handling.h",
+              "DocumentMoniker": "D:\\Visual Studio 2022\\C\\Jungle Run\\collision_handling.h",
+              "RelativeDocumentMoniker": "collision_handling.h",
+              "ToolTip": "D:\\Visual Studio 2022\\C\\Jungle Run\\collision_handling.h",
+              "RelativeToolTip": "collision_handling.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2023-05-22T03:06:04.757Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "map.c",
+              "DocumentMoniker": "D:\\Visual Studio 2022\\C\\Jungle Run\\map.c",
+              "RelativeDocumentMoniker": "map.c",
+              "ToolTip": "D:\\Visual Studio 2022\\C\\Jungle Run\\map.c",
+              "RelativeToolTip": "map.c",
+              "ViewState": "AQIAAJYAAAAAAAAAAAAAABAAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2023-04-23T13:35:02.209Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "map.h",
+              "DocumentMoniker": "D:\\Visual Studio 2022\\C\\Jungle Run\\map.h",
+              "RelativeDocumentMoniker": "map.h",
+              "ToolTip": "D:\\Visual Studio 2022\\C\\Jungle Run\\map.h",
+              "RelativeToolTip": "map.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADUBAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2023-04-30T05:03:08.064Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "menu.c",
+              "DocumentMoniker": "D:\\Visual Studio 2022\\C\\Jungle Run\\menu.c",
+              "RelativeDocumentMoniker": "menu.c",
+              "ToolTip": "D:\\Visual Studio 2022\\C\\Jungle Run\\menu.c",
+              "RelativeToolTip": "menu.c",
+              "ViewState": "AQIAAOsGAAAAAAAAAAAUwPsGAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2023-04-11T14:20:06.952Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "collision_handling.c",
+              "DocumentMoniker": "D:\\Visual Studio 2022\\C\\Jungle Run\\collision_handling.c",
+              "RelativeDocumentMoniker": "collision_handling.c",
+              "ToolTip": "D:\\Visual Studio 2022\\C\\Jungle Run\\collision_handling.c",
+              "RelativeToolTip": "collision_handling.c",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAAAsAAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2023-04-12T05:17:32.689Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "defs.h",
+              "DocumentMoniker": "D:\\Visual Studio 2022\\C\\Jungle Run\\defs.h",
+              "RelativeDocumentMoniker": "defs.h",
+              "ToolTip": "D:\\Visual Studio 2022\\C\\Jungle Run\\defs.h",
+              "RelativeToolTip": "defs.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2023-04-11T14:20:07.626Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "help.c",
+              "DocumentMoniker": "D:\\Visual Studio 2022\\C\\Jungle Run\\help.c",
+              "RelativeDocumentMoniker": "help.c",
+              "ToolTip": "D:\\Visual Studio 2022\\C\\Jungle Run\\help.c",
+              "RelativeToolTip": "help.c",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2023-04-11T14:20:06.952Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "preGameplay.c",
+              "DocumentMoniker": "D:\\Visual Studio 2022\\C\\Jungle Run\\preGameplay.c",
+              "RelativeDocumentMoniker": "preGameplay.c",
+              "ToolTip": "D:\\Visual Studio 2022\\C\\Jungle Run\\preGameplay.c",
+              "RelativeToolTip": "preGameplay.c",
+              "ViewState": "AQIAAJYAAAAAAAAAAAAAAKwAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2023-04-11T14:20:06.951Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "main.c",
+              "DocumentMoniker": "D:\\Visual Studio 2022\\C\\Jungle Run\\main.c",
+              "RelativeDocumentMoniker": "main.c",
+              "ToolTip": "D:\\Visual Studio 2022\\C\\Jungle Run\\main.c",
+              "RelativeToolTip": "main.c",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2023-04-11T14:20:06.953Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "load.c",
+              "DocumentMoniker": "D:\\Visual Studio 2022\\C\\Jungle Run\\load.c",
+              "RelativeDocumentMoniker": "load.c",
+              "ToolTip": "D:\\Visual Studio 2022\\C\\Jungle Run\\load.c",
+              "RelativeToolTip": "load.c",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAA4AAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2023-04-11T14:20:07.724Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "common_functions.c",
+              "DocumentMoniker": "D:\\Visual Studio 2022\\C\\Jungle Run\\common_functions.c",
+              "RelativeDocumentMoniker": "common_functions.c",
+              "ToolTip": "D:\\Visual Studio 2022\\C\\Jungle Run\\common_functions.c",
+              "RelativeToolTip": "common_functions.c",
+              "ViewState": "AQIAAG0AAAAAAAAAAAAAALsAAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2023-04-11T14:20:07.726Z"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 18,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "checkAccount.c",
+              "DocumentMoniker": "D:\\Visual Studio 2022\\C\\Jungle Run\\checkAccount.c",
+              "RelativeDocumentMoniker": "checkAccount.c",
+              "ToolTip": "D:\\Visual Studio 2022\\C\\Jungle Run\\checkAccount.c",
+              "RelativeToolTip": "checkAccount.c",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2023-04-30T05:08:41.435Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

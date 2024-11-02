@@ -1,0 +1,110 @@
+﻿  checkAccount.c
+  collision_handling.c
+  help.c
+D:\Visual Studio 2022\C\Jungle Run\checkAccount.c(12,18): warning C4047: 'function': 'char *' differs in levels of indirection from 'char [100][50]'
+D:\Visual Studio 2022\C\Jungle Run\checkAccount.c(12,18): warning C4024: 'fgets': different types for formal and actual parameter 1
+D:\Visual Studio 2022\C\Jungle Run\checkAccount.c(6,9): warning C4101: 'm': unreferenced local variable
+D:\Visual Studio 2022\C\Jungle Run\checkAccount.c(49,18): warning C4047: 'function': 'char *' differs in levels of indirection from 'char [100][100]'
+D:\Visual Studio 2022\C\Jungle Run\checkAccount.c(49,18): warning C4024: 'fgets': different types for formal and actual parameter 1
+D:\Visual Studio 2022\C\Jungle Run\checkAccount.c(80,43): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+D:\Visual Studio 2022\C\Jungle Run\collision_handling.c(33,24): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\Visual Studio 2022\C\Jungle Run\collision_handling.c(33,27): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\Visual Studio 2022\C\Jungle Run\collision_handling.c(33,30): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\Visual Studio 2022\C\Jungle Run\collision_handling.c(33,33): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\Visual Studio 2022\C\Jungle Run\collision_handling.c(34,24): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\Visual Studio 2022\C\Jungle Run\collision_handling.c(34,27): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\Visual Studio 2022\C\Jungle Run\collision_handling.c(34,30): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\Visual Studio 2022\C\Jungle Run\collision_handling.c(34,33): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\Visual Studio 2022\C\Jungle Run\help.c(251,26): warning C4133: 'function': incompatible types - from 'Mix_Music *' to 'Mix_Chunk *'
+D:\Visual Studio 2022\C\Jungle Run\help.c(175,13): warning C4133: 'initializing': incompatible types - from 'Mix_Chunk *' to 'Mix_Music *'
+  load.c
+  main.c
+  map.c
+D:\Visual Studio 2022\C\Jungle Run\map.c(325,54): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\Visual Studio 2022\C\Jungle Run\map.c(325,78): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\Visual Studio 2022\C\Jungle Run\map.c(326,45): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\Visual Studio 2022\C\Jungle Run\map.c(326,91): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\Visual Studio 2022\C\Jungle Run\map.c(326,116): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\Visual Studio 2022\C\Jungle Run\map.c(326,140): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\Visual Studio 2022\C\Jungle Run\map.c(332,42): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\Visual Studio 2022\C\Jungle Run\map.c(332,89): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\Visual Studio 2022\C\Jungle Run\map.c(332,113): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\Visual Studio 2022\C\Jungle Run\map.c(332,138): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\Visual Studio 2022\C\Jungle Run\map.c(341,38): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\Visual Studio 2022\C\Jungle Run\map.c(342,37): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\Visual Studio 2022\C\Jungle Run\map.c(343,34): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\Visual Studio 2022\C\Jungle Run\map.c(369,7): warning C4047: 'initializing': 'Map *' differs in levels of indirection from 'Map (*)[20]'
+D:\Visual Studio 2022\C\Jungle Run\map.c(437,7): warning C4047: 'initializing': 'Map *' differs in levels of indirection from 'Map (*)[20]'
+  common_functions.c
+D:\Visual Studio 2022\C\Jungle Run\common_functions.c(307,30): warning C4047: 'function': 'SDL_Texture *' differs in levels of indirection from 'SDL_Texture *[12]'
+D:\Visual Studio 2022\C\Jungle Run\common_functions.c(307,30): warning C4024: 'SDL_DestroyTexture': different types for formal and actual parameter 1
+D:\Visual Studio 2022\C\Jungle Run\common_functions.c(308,30): warning C4047: 'function': 'SDL_Texture *' differs in levels of indirection from 'SDL_Texture *[8]'
+D:\Visual Studio 2022\C\Jungle Run\common_functions.c(308,30): warning C4024: 'SDL_DestroyTexture': different types for formal and actual parameter 1
+D:\Visual Studio 2022\C\Jungle Run\common_functions.c(309,30): warning C4047: 'function': 'SDL_Texture *' differs in levels of indirection from 'SDL_Texture *[4]'
+D:\Visual Studio 2022\C\Jungle Run\common_functions.c(309,30): warning C4024: 'SDL_DestroyTexture': different types for formal and actual parameter 1
+D:\Visual Studio 2022\C\Jungle Run\common_functions.c(310,30): warning C4047: 'function': 'SDL_Texture *' differs in levels of indirection from 'SDL_Texture *[6]'
+D:\Visual Studio 2022\C\Jungle Run\common_functions.c(310,30): warning C4024: 'SDL_DestroyTexture': different types for formal and actual parameter 1
+D:\Visual Studio 2022\C\Jungle Run\common_functions.c(312,46): warning C4047: 'function': 'SDL_Texture *' differs in levels of indirection from 'SDL_Texture *[3]'
+D:\Visual Studio 2022\C\Jungle Run\common_functions.c(312,46): warning C4024: 'SDL_DestroyTexture': different types for formal and actual parameter 1
+D:\Visual Studio 2022\C\Jungle Run\common_functions.c(314,30): warning C4047: 'function': 'SDL_Texture *' differs in levels of indirection from 'SDL_Texture *[1]'
+D:\Visual Studio 2022\C\Jungle Run\common_functions.c(314,30): warning C4024: 'SDL_DestroyTexture': different types for formal and actual parameter 1
+D:\Visual Studio 2022\C\Jungle Run\common_functions.c(315,30): warning C4047: 'function': 'SDL_Texture *' differs in levels of indirection from 'SDL_Texture *[3]'
+D:\Visual Studio 2022\C\Jungle Run\common_functions.c(315,30): warning C4024: 'SDL_DestroyTexture': different types for formal and actual parameter 1
+  menu.c
+D:\Visual Studio 2022\C\Jungle Run\menu.c(124,26): warning C4133: 'function': incompatible types - from 'Mix_Music *' to 'Mix_Chunk *'
+D:\Visual Studio 2022\C\Jungle Run\menu.c(130,26): warning C4133: 'function': incompatible types - from 'Mix_Music *' to 'Mix_Chunk *'
+D:\Visual Studio 2022\C\Jungle Run\menu.c(136,26): warning C4133: 'function': incompatible types - from 'Mix_Music *' to 'Mix_Chunk *'
+D:\Visual Studio 2022\C\Jungle Run\menu.c(142,26): warning C4133: 'function': incompatible types - from 'Mix_Music *' to 'Mix_Chunk *'
+D:\Visual Studio 2022\C\Jungle Run\menu.c(148,26): warning C4133: 'function': incompatible types - from 'Mix_Music *' to 'Mix_Chunk *'
+D:\Visual Studio 2022\C\Jungle Run\menu.c(154,26): warning C4133: 'function': incompatible types - from 'Mix_Music *' to 'Mix_Chunk *'
+D:\Visual Studio 2022\C\Jungle Run\menu.c(177,22): warning C4047: 'function': 'SDL_Texture *' differs in levels of indirection from 'SDL_Texture *[6]'
+D:\Visual Studio 2022\C\Jungle Run\menu.c(177,22): warning C4024: 'SDL_DestroyTexture': different types for formal and actual parameter 1
+D:\Visual Studio 2022\C\Jungle Run\menu.c(44,13): warning C4133: 'initializing': incompatible types - from 'Mix_Chunk *' to 'Mix_Music *'
+D:\Visual Studio 2022\C\Jungle Run\menu.c(274,17): warning C4098: 'loginDisplay': 'void' function returning a value
+D:\Visual Studio 2022\C\Jungle Run\menu.c(393,61): warning C4133: 'function': incompatible types - from 'Mix_Music *' to 'Mix_Chunk *'
+D:\Visual Studio 2022\C\Jungle Run\menu.c(405,61): warning C4133: 'function': incompatible types - from 'Mix_Music *' to 'Mix_Chunk *'
+D:\Visual Studio 2022\C\Jungle Run\menu.c(492,59): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+D:\Visual Studio 2022\C\Jungle Run\menu.c(584,61): warning C4133: 'function': incompatible types - from 'Mix_Music *' to 'Mix_Chunk *'
+D:\Visual Studio 2022\C\Jungle Run\menu.c(596,61): warning C4133: 'function': incompatible types - from 'Mix_Music *' to 'Mix_Chunk *'
+D:\Visual Studio 2022\C\Jungle Run\menu.c(680,59): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+D:\Visual Studio 2022\C\Jungle Run\menu.c(742,45): warning C4133: 'function': incompatible types - from 'Mix_Music *' to 'Mix_Chunk *'
+D:\Visual Studio 2022\C\Jungle Run\menu.c(782,45): warning C4133: 'function': incompatible types - from 'Mix_Music *' to 'Mix_Chunk *'
+D:\Visual Studio 2022\C\Jungle Run\menu.c(267,16): warning C4133: 'initializing': incompatible types - from 'Mix_Chunk *' to 'Mix_Music *'
+D:\Visual Studio 2022\C\Jungle Run\menu.c(270,14): warning C4101: 'imageRect': unreferenced local variable
+D:\Visual Studio 2022\C\Jungle Run\menu.c(311,14): warning C4101: 'textRect2': unreferenced local variable
+D:\Visual Studio 2022\C\Jungle Run\menu.c(191,33): warning C4101: 'textSurface2': unreferenced local variable
+D:\Visual Studio 2022\C\Jungle Run\menu.c(300,14): warning C4101: 'textRect1': unreferenced local variable
+D:\Visual Studio 2022\C\Jungle Run\menu.c(192,33): warning C4101: 'textTexture2': unreferenced local variable
+D:\Visual Studio 2022\C\Jungle Run\menu.c(951,11): warning C4098: 'registerDisplay': 'void' function returning a value
+D:\Visual Studio 2022\C\Jungle Run\menu.c(1085,30): warning C4133: 'function': incompatible types - from 'Mix_Music *' to 'Mix_Chunk *'
+D:\Visual Studio 2022\C\Jungle Run\menu.c(1093,30): warning C4133: 'function': incompatible types - from 'Mix_Music *' to 'Mix_Chunk *'
+D:\Visual Studio 2022\C\Jungle Run\menu.c(1194,25): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+D:\Visual Studio 2022\C\Jungle Run\menu.c(1292,30): warning C4133: 'function': incompatible types - from 'Mix_Music *' to 'Mix_Chunk *'
+D:\Visual Studio 2022\C\Jungle Run\menu.c(1300,30): warning C4133: 'function': incompatible types - from 'Mix_Music *' to 'Mix_Chunk *'
+D:\Visual Studio 2022\C\Jungle Run\menu.c(1396,25): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+D:\Visual Studio 2022\C\Jungle Run\menu.c(1495,30): warning C4133: 'function': incompatible types - from 'Mix_Music *' to 'Mix_Chunk *'
+D:\Visual Studio 2022\C\Jungle Run\menu.c(1503,30): warning C4133: 'function': incompatible types - from 'Mix_Music *' to 'Mix_Chunk *'
+D:\Visual Studio 2022\C\Jungle Run\menu.c(1598,27): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+D:\Visual Studio 2022\C\Jungle Run\menu.c(1660,26): warning C4133: 'function': incompatible types - from 'Mix_Music *' to 'Mix_Chunk *'
+D:\Visual Studio 2022\C\Jungle Run\menu.c(1668,26): warning C4133: 'function': incompatible types - from 'Mix_Music *' to 'Mix_Chunk *'
+D:\Visual Studio 2022\C\Jungle Run\menu.c(945,13): warning C4133: 'initializing': incompatible types - from 'Mix_Chunk *' to 'Mix_Music *'
+D:\Visual Studio 2022\C\Jungle Run\menu.c(1855,26): warning C4133: 'function': incompatible types - from 'Mix_Music *' to 'Mix_Chunk *'
+D:\Visual Studio 2022\C\Jungle Run\menu.c(1789,13): warning C4133: 'initializing': incompatible types - from 'Mix_Chunk *' to 'Mix_Music *'
+D:\Visual Studio 2022\C\Jungle Run\menu.c(2009,26): warning C4133: 'function': incompatible types - from 'Mix_Music *' to 'Mix_Chunk *'
+D:\Visual Studio 2022\C\Jungle Run\menu.c(2022,26): warning C4133: 'function': incompatible types - from 'Mix_Music *' to 'Mix_Chunk *'
+D:\Visual Studio 2022\C\Jungle Run\menu.c(2035,26): warning C4133: 'function': incompatible types - from 'Mix_Music *' to 'Mix_Chunk *'
+D:\Visual Studio 2022\C\Jungle Run\menu.c(1924,13): warning C4133: 'initializing': incompatible types - from 'Mix_Chunk *' to 'Mix_Music *'
+D:\Visual Studio 2022\C\Jungle Run\menu.c(2220,26): warning C4133: 'function': incompatible types - from 'Mix_Music *' to 'Mix_Chunk *'
+D:\Visual Studio 2022\C\Jungle Run\menu.c(2100,13): warning C4133: 'initializing': incompatible types - from 'Mix_Chunk *' to 'Mix_Music *'
+  preGameplay.c
+D:\Visual Studio 2022\C\Jungle Run\preGameplay.c(57,7): warning C4047: 'initializing': 'char' differs in levels of indirection from 'void *'
+  render.c
+D:\Visual Studio 2022\C\Jungle Run\render.c(65,59): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+D:\Visual Studio 2022\C\Jungle Run\render.c(65,99): warning C4244: 'function': conversion from 'float' to 'int', possible loss of data
+D:\Visual Studio 2022\C\Jungle Run\render.c(68,43): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\Visual Studio 2022\C\Jungle Run\render.c(68,83): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\Visual Studio 2022\C\Jungle Run\render.c(77,42): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\Visual Studio 2022\C\Jungle Run\render.c(77,64): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
+D:\Visual Studio 2022\C\Jungle Run\common_functions.c(105,1): warning C4715: 'processEvents': not all control paths return a value
+  Jungle Run.vcxproj -> D:\Visual Studio 2022\C\Jungle Run\x64\Debug\Jungle Run.exe
