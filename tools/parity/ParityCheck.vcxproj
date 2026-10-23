@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{7d3c2a51-9e0b-4c8a-b1f2-3e4d5c6b7a81}</ProjectGuid>
+    <RootNamespace>ParityCheck</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(ProjectDir)..\..\External library\SDL2\include;$(ProjectDir)..\..\External library\SDL2_ttf\include;$(ProjectDir)..\..\External library\SDL2_image\include;$(ProjectDir)..\..\External library\SDL2_mixer\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)..\..\External library\SDL2\lib\x64;$(ProjectDir)..\..\External library\SDL2_image\lib\x64;$(ProjectDir)..\..\External library\SDL2_ttf\lib\x64;$(ProjectDir)..\..\External library\SDL2_mixer\lib\x64;$(LibraryPath)</LibraryPath>
+    <IntDir>$(Platform)\$(Configuration)\obj\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ConformanceMode>true</ConformanceMode>
+      <ForcedIncludeFiles>parity_clock.h</ForcedIncludeFiles>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <!-- C reference -->
+    <ClCompile Include="..\..\src\core\res.c" />
+    <ClCompile Include="..\..\src\game\assets.c" />
+    <ClCompile Include="..\..\src\game\physics.c" />
+    <ClCompile Include="..\..\src\game\collision.c" />
+    <ClCompile Include="..\..\src\game\map.c" />
+    <ClCompile Include="..\..\src\game\levels.c" />
+    <ClCompile Include="..\..\src\game\render.c" />
+    <ClCompile Include="parity_c.c" />
+    <!-- C++ port -->
+    <ClCompile Include="..\..\src\core\SdlHandles.cpp" />
+    <ClCompile Include="..\..\src\game\GameAssets.cpp" />
+    <ClCompile Include="..\..\src\game\Pickup.cpp" />
+    <ClCompile Include="..\..\src\game\SmolGolem.cpp" />
+    <ClCompile Include="..\..\src\game\EntityFactory.cpp" />
+    <ClCompile Include="..\..\src\game\LevelLoader.cpp" />
+    <ClCompile Include="..\..\src\game\Player.cpp" />
+    <ClCompile Include="..\..\src\game\Hud.cpp" />
+    <ClCompile Include="..\..\src\game\Level.cpp" />
+    <ClCompile Include="..\..\src\game\World.cpp" />
+    <ClCompile Include="parity_cpp.cpp" />
+    <ClCompile Include="parity_main.cpp">
+      <ForcedIncludeFiles>
+      </ForcedIncludeFiles>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>
