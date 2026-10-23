@@ -1,6 +1,6 @@
 # Jungle Run — Thiết kế refactor & sửa memory leak
 
-Ngày: 2026-10-23 · Trạng thái: đã duyệt, chưa triển khai
+Ngày: 2026-10-23 · Trạng thái: đã triển khai (branch `refactor/scene-loop-memleak`), chờ kiểm thử runtime
 
 ## 1. Bối cảnh
 
@@ -49,6 +49,13 @@ Bug khác: `processEvents()` thiếu `return` (UB), `while (&quit)` lặp vô h�
 | 7 | Được build, không chạy | Chỉ sửa code | Bắt lỗi biên dịch sớm |
 | 8 | Kiến trúc A: `SceneId xxx_run(App*)` + `switch` trong main | B: state machine con trỏ hàm; C: vá tại chỗ | Ít code nhất, giữ hình dạng vòng lặp hiện có của menu → ít rủi ro lệch UI; B là trừu tượng chưa cần |
 | 9 | Bộ đếm hiển thị trên tiêu đề cửa sổ + log khi đổi scene | Overlay text trong game | Không tạo texture → bộ đếm không tự leak; chạy ở mọi scene |
+| 10 | `core/text.c` + `Label` → `res_text()` + `hud_label()` static trong render.c | File text riêng | Ít file hơn, cùng tác dụng |
+| 11 | Màn menu/story/help/donate/gamemode vẽ lại toàn bộ mỗi frame; intro giữ vẽ cộng dồn | Port nguyên cách vẽ chắp vá | Code ngắn hơn nhiều, không dựa vào back-buffer sau `RenderPresent` |
+| 12 | Mũi tên Game Mode dùng 60pt cả khi hover | Giữ đổi sang 40pt kéo giãn | Bản cũ không nhất quán |
+| 13 | `GameState` giữ con trỏ `renderer` (mượn) | Truyền renderer vào mọi hàm vẽ | Ít thay đổi chữ ký |
+| 14 | Gộp GĐ2+3 của thiết kế | Giữ tách | Game và scene phải đổi cùng lúc mới build được |
+| 15 | Sửa thêm: tràn `lineTexture[2]`, đọc `story[7]`, R/X bị nuốt, Game Mode reset độ khó, `drawTilesMap` copy `Map` | — | Phát hiện khi lập kế hoạch |
+| 16 | Trúng bẫy: nhấp nháy đỏ mỗi 100ms khi bất tử | `RenderPresent` giữa frame như cũ | Hiệu ứng giữ được, không nháy cả màn hình |
 
 ## 5. Thiết kế
 
