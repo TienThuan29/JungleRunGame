@@ -40,90 +40,84 @@
     <Filter Include="Resource Files\Fonts">
       <UniqueIdentifier>{23b84e89-fd79-480e-8cc1-18ced2498a04}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\map">
-      <UniqueIdentifier>{0acbb85c-88c9-4436-931a-132d1d6b03a0}</UniqueIdentifier>
+    <Filter Include="Source Files\core">
+      <UniqueIdentifier>{5b1f0c1e-3a43-4b8e-9a51-1c2d7f0e6a02}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\load">
-      <UniqueIdentifier>{b0e7f9a0-86ad-42ea-bea0-c9165a297e8f}</UniqueIdentifier>
+    <Filter Include="Source Files\scenes">
+      <UniqueIdentifier>{5b1f0c1e-3a43-4b8e-9a51-1c2d7f0e6a03}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\collision handling">
-      <UniqueIdentifier>{e38afb9a-a208-45c7-abe6-10558acee465}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\common functions">
-      <UniqueIdentifier>{ebb31288-0d99-4634-88c8-dfa37e7f2ca2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\render">
-      <UniqueIdentifier>{a0ca499d-fb11-4b6a-8bd6-68a0401f35a9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\menu">
-      <UniqueIdentifier>{caa3e7ca-26db-43d5-a86b-8c1febb65c94}</UniqueIdentifier>
+    <Filter Include="Source Files\game">
+      <UniqueIdentifier>{5b1f0c1e-3a43-4b8e-9a51-1c2d7f0e6a04}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.c">
+    <ClCompile Include="src\main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="map.c">
-      <Filter>Source Files\map</Filter>
+    <ClCompile Include="src\core\app.c">
+      <Filter>Source Files\core</Filter>
     </ClCompile>
-    <ClCompile Include="load.c">
-      <Filter>Source Files\load</Filter>
+    <ClCompile Include="src\core\res.c">
+      <Filter>Source Files\core</Filter>
     </ClCompile>
-    <ClCompile Include="collision_handling.c">
-      <Filter>Source Files\collision handling</Filter>
+    <ClCompile Include="src\scenes\menu.c">
+      <Filter>Source Files\scenes</Filter>
     </ClCompile>
-    <ClCompile Include="common_functions.c">
-      <Filter>Source Files\common functions</Filter>
+    <ClCompile Include="src\scenes\story.c">
+      <Filter>Source Files\scenes</Filter>
     </ClCompile>
-    <ClCompile Include="render.c">
-      <Filter>Source Files\render</Filter>
+    <ClCompile Include="src\scenes\help.c">
+      <Filter>Source Files\scenes</Filter>
     </ClCompile>
-    <ClCompile Include="menu.c">
-      <Filter>Source Files\menu</Filter>
+    <ClCompile Include="src\scenes\donate.c">
+      <Filter>Source Files\scenes</Filter>
     </ClCompile>
-    <ClCompile Include="help.c">
-      <Filter>Source Files\menu</Filter>
+    <ClCompile Include="src\scenes\gamemode.c">
+      <Filter>Source Files\scenes</Filter>
     </ClCompile>
-    <ClCompile Include="preGameplay.c">
-      <Filter>Source Files\menu</Filter>
+    <ClCompile Include="src\scenes\intro.c">
+      <Filter>Source Files\scenes</Filter>
     </ClCompile>
-    <ClCompile Include="checkAccount.c">
-      <Filter>Source Files\menu</Filter>
+    <ClCompile Include="src\scenes\gameplay.c">
+      <Filter>Source Files\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\assets.c">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\physics.c">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\collision.c">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\map.c">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\levels.c">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\render.c">
+      <Filter>Source Files\game</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="defs.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="src\coreapp.h">
+      <Filter>Source Files\core</Filter>
     </ClInclude>
-    <ClInclude Include="structs.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="src\coreres.h">
+      <Filter>Source Files\core</Filter>
     </ClInclude>
-    <ClInclude Include="map.h">
-      <Filter>Source Files\map</Filter>
+    <ClInclude Include="src\scenes\scene.h">
+      <Filter>Source Files\scenes</Filter>
     </ClInclude>
-    <ClInclude Include="load.h">
-      <Filter>Source Files\load</Filter>
+    <ClInclude Include="src\game\defs.h">
+      <Filter>Source Files\game</Filter>
     </ClInclude>
-    <ClInclude Include="collision_handling.h">
-      <Filter>Source Files\collision handling</Filter>
+    <ClInclude Include="src\game\gamestate.h">
+      <Filter>Source Files\game</Filter>
     </ClInclude>
-    <ClInclude Include="common_functions.h">
-      <Filter>Source Files\common functions</Filter>
-    </ClInclude>
-    <ClInclude Include="render.h">
-      <Filter>Source Files\render</Filter>
-    </ClInclude>
-    <ClInclude Include="menu.h">
-      <Filter>Source Files\menu</Filter>
-    </ClInclude>
-    <ClInclude Include="help.h">
-      <Filter>Source Files\menu</Filter>
-    </ClInclude>
-    <ClInclude Include="preGameplay.h">
-      <Filter>Source Files\menu</Filter>
-    </ClInclude>
-    <ClInclude Include="checkAccount.h">
-      <Filter>Source Files\menu</Filter>
+    <ClInclude Include="src\game\game.h">
+      <Filter>Source Files\game</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

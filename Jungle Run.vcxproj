@@ -143,35 +143,30 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="checkAccount.c" />
-    <ClCompile Include="collision_handling.c" />
-    <ClCompile Include="help.c" />
-    <ClCompile Include="load.c" />
-    <ClCompile Include="main.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="map.c" />
-    <ClCompile Include="common_functions.c" />
-    <ClCompile Include="menu.c" />
-    <ClCompile Include="preGameplay.c" />
-    <ClCompile Include="render.c" />
+    <ClCompile Include="src\main.c" />
     <ClCompile Include="src\core\app.c" />
     <ClCompile Include="src\core\res.c" />
+    <ClCompile Include="src\scenes\menu.c" />
+    <ClCompile Include="src\scenes\story.c" />
+    <ClCompile Include="src\scenes\help.c" />
+    <ClCompile Include="src\scenes\donate.c" />
+    <ClCompile Include="src\scenes\gamemode.c" />
+    <ClCompile Include="src\scenes\intro.c" />
+    <ClCompile Include="src\scenes\gameplay.c" />
+    <ClCompile Include="src\game\assets.c" />
+    <ClCompile Include="src\game\physics.c" />
+    <ClCompile Include="src\game\collision.c" />
+    <ClCompile Include="src\game\map.c" />
+    <ClCompile Include="src\game\levels.c" />
+    <ClCompile Include="src\game\render.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="checkAccount.h" />
-    <ClInclude Include="collision_handling.h" />
-    <ClInclude Include="defs.h" />
-    <ClInclude Include="help.h" />
-    <ClInclude Include="load.h" />
-    <ClInclude Include="map.h" />
-    <ClInclude Include="common_functions.h" />
-    <ClInclude Include="menu.h" />
-    <ClInclude Include="preGameplay.h" />
-    <ClInclude Include="render.h" />
-    <ClInclude Include="structs.h" />
     <ClInclude Include="src\core\app.h" />
     <ClInclude Include="src\core\res.h" />
+    <ClInclude Include="src\scenes\scene.h" />
+    <ClInclude Include="src\game\defs.h" />
+    <ClInclude Include="src\game\gamestate.h" />
+    <ClInclude Include="src\game\game.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Resource\Character\Idle\Idle_1.png" />

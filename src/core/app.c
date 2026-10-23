@@ -1,6 +1,6 @@
 #include "core/app.h"
 #include "core/res.h"
-#include "../../defs.h"
+#include "game/defs.h"
 #include <SDL_image.h>
 #include <SDL_ttf.h>
 

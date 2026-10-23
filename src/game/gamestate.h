@@ -1,6 +1,6 @@
-#ifndef STRUCTS
-#define STRUCTS
-#include "defs.h"
+#ifndef GAMESTATE_H
+#define GAMESTATE_H
+#include "game/defs.h"
 #include <SDL.h>
 #include <SDL_image.h>
 #include <SDL_mixer.h>
@@ -70,7 +70,7 @@ typedef struct {
 	// Time
 	float dt, overTiming, bossStart;
 	// difficulty
-	int mode, difficulty, setDifficulty;
+	int mode, difficulty;
 	// Required items to achieve good ending
 	int health_potion_counter; // if = 5 -> good ending 
 	// draw key map
@@ -110,16 +110,21 @@ typedef struct {
 	SDL_Texture* platform[6];
 	// Background
 	Background background[5];
-	// Label
+	// HUD text, re-rendered only when the value changes
 	SDL_Texture* label_lives;
 	SDL_Texture* label_health_potion;
+	int cached_lives, cached_potions;
+	// Ending screen text, created once per ending
+	SDL_Texture* over_title;
+	SDL_Texture* over_hint;
 	// Fonts
-	TTF_Font* font;
+	TTF_Font* hud_font;  // crazy-pixel 48
+	TTF_Font* over_font; // Kanit-Light 108
 	// Sound
 	SoundEffect soundEffects;
 	Music soundTracks;
 	// Renderer
-	SDL_Renderer* renderer;
+	SDL_Renderer* renderer; // borrowed from App
 	// Map
 	Map map[20];
 } GameState;
