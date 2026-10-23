@@ -40,6 +40,9 @@
     <Filter Include="Resource Files\Fonts">
       <UniqueIdentifier>{23b84e89-fd79-480e-8cc1-18ced2498a04}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\ui">
+      <UniqueIdentifier>{5b1f0c1e-3a43-4b8e-9a51-1c2d7f0e6a05}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files\core">
       <UniqueIdentifier>{5b1f0c1e-3a43-4b8e-9a51-1c2d7f0e6a02}</UniqueIdentifier>
     </Filter>
@@ -51,70 +54,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\main.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\core\app.c">
+    <ClCompile Include="src\core\Game.cpp">
       <Filter>Source Files\core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\core\res.c">
-      <Filter>Source Files\core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\scenes\menu.c">
-      <Filter>Source Files\scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="src\scenes\story.c">
-      <Filter>Source Files\scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="src\scenes\help.c">
-      <Filter>Source Files\scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="src\scenes\donate.c">
-      <Filter>Source Files\scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="src\scenes\gamemode.c">
-      <Filter>Source Files\scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="src\scenes\intro.c">
-      <Filter>Source Files\scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="src\scenes\gameplay.c">
-      <Filter>Source Files\scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="src\game\assets.c">
-      <Filter>Source Files\game</Filter>
-    </ClCompile>
-    <ClCompile Include="src\game\physics.c">
-      <Filter>Source Files\game</Filter>
-    </ClCompile>
-    <ClCompile Include="src\game\collision.c">
-      <Filter>Source Files\game</Filter>
-    </ClCompile>
-    <ClCompile Include="src\game\map.c">
-      <Filter>Source Files\game</Filter>
-    </ClCompile>
-    <ClCompile Include="src\game\levels.c">
-      <Filter>Source Files\game</Filter>
     </ClCompile>
     <ClCompile Include="src\core\SdlHandles.cpp">
       <Filter>Source Files\core</Filter>
     </ClCompile>
-    <ClCompile Include="src\game\GameAssets.cpp">
-      <Filter>Source Files\game</Filter>
-    </ClCompile>
-    <ClCompile Include="src\game\Pickup.cpp">
-      <Filter>Source Files\game</Filter>
-    </ClCompile>
-    <ClCompile Include="src\game\SmolGolem.cpp">
-      <Filter>Source Files\game</Filter>
-    </ClCompile>
     <ClCompile Include="src\game\EntityFactory.cpp">
       <Filter>Source Files\game</Filter>
     </ClCompile>
-    <ClCompile Include="src\game\LevelLoader.cpp">
-      <Filter>Source Files\game</Filter>
-    </ClCompile>
-    <ClCompile Include="src\game\Player.cpp">
+    <ClCompile Include="src\game\GameAssets.cpp">
       <Filter>Source Files\game</Filter>
     </ClCompile>
     <ClCompile Include="src\game\Hud.cpp">
@@ -123,28 +72,55 @@
     <ClCompile Include="src\game\Level.cpp">
       <Filter>Source Files\game</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\LevelLoader.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\Pickup.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\Player.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\SmolGolem.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\World.cpp">
       <Filter>Source Files\game</Filter>
     </ClCompile>
-    <ClCompile Include="src\game\render.c">
-      <Filter>Source Files\game</Filter>
+    <ClCompile Include="src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\DonateScene.cpp">
+      <Filter>Source Files\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\GameModeScene.cpp">
+      <Filter>Source Files\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\GameplayScene.cpp">
+      <Filter>Source Files\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\HelpScene.cpp">
+      <Filter>Source Files\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\IntroScene.cpp">
+      <Filter>Source Files\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\MenuScene.cpp">
+      <Filter>Source Files\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\Scene.cpp">
+      <Filter>Source Files\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\StoryScene.cpp">
+      <Filter>Source Files\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\Button.cpp">
+      <Filter>Source Files\ui</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\coreapp.h">
+    <ClInclude Include="src\core\Game.h">
       <Filter>Source Files\core</Filter>
-    </ClInclude>
-    <ClInclude Include="src\coreres.h">
-      <Filter>Source Files\core</Filter>
-    </ClInclude>
-    <ClInclude Include="src\scenes\scene.h">
-      <Filter>Source Files\scenes</Filter>
-    </ClInclude>
-    <ClInclude Include="src\game\defs.h">
-      <Filter>Source Files\game</Filter>
-    </ClInclude>
-    <ClInclude Include="src\game\gamestate.h">
-      <Filter>Source Files\game</Filter>
     </ClInclude>
     <ClInclude Include="src\core\SdlHandles.h">
       <Filter>Source Files\core</Filter>
@@ -152,40 +128,19 @@
     <ClInclude Include="src\game\Config.h">
       <Filter>Source Files\game</Filter>
     </ClInclude>
-    <ClInclude Include="src\game\GameAssets.h">
+    <ClInclude Include="src\game\Decoration.h">
       <Filter>Source Files\game</Filter>
     </ClInclude>
     <ClInclude Include="src\game\Entity.h">
       <Filter>Source Files\game</Filter>
     </ClInclude>
-    <ClInclude Include="src\game\Tile.h">
-      <Filter>Source Files\game</Filter>
-    </ClInclude>
-    <ClInclude Include="src\game\Trap.h">
-      <Filter>Source Files\game</Filter>
-    </ClInclude>
-    <ClInclude Include="src\game\Pickup.h">
-      <Filter>Source Files\game</Filter>
-    </ClInclude>
-    <ClInclude Include="src\game\SmolGolem.h">
-      <Filter>Source Files\game</Filter>
-    </ClInclude>
-    <ClInclude Include="src\game\Decoration.h">
-      <Filter>Source Files\game</Filter>
-    </ClInclude>
     <ClInclude Include="src\game\EntityFactory.h">
       <Filter>Source Files\game</Filter>
     </ClInclude>
-    <ClInclude Include="src\game\LevelLoader.h">
-      <Filter>Source Files\game</Filter>
-    </ClInclude>
-    <ClInclude Include="src\game\Player.h">
+    <ClInclude Include="src\game\GameAssets.h">
       <Filter>Source Files\game</Filter>
     </ClInclude>
     <ClInclude Include="src\game\GigaGolem.h">
-      <Filter>Source Files\game</Filter>
-    </ClInclude>
-    <ClInclude Include="src\game\Parallax.h">
       <Filter>Source Files\game</Filter>
     </ClInclude>
     <ClInclude Include="src\game\Hud.h">
@@ -194,11 +149,38 @@
     <ClInclude Include="src\game\Level.h">
       <Filter>Source Files\game</Filter>
     </ClInclude>
+    <ClInclude Include="src\game\LevelLoader.h">
+      <Filter>Source Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\Parallax.h">
+      <Filter>Source Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\Pickup.h">
+      <Filter>Source Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\Player.h">
+      <Filter>Source Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\SmolGolem.h">
+      <Filter>Source Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\Tile.h">
+      <Filter>Source Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\Trap.h">
+      <Filter>Source Files\game</Filter>
+    </ClInclude>
     <ClInclude Include="src\game\World.h">
       <Filter>Source Files\game</Filter>
     </ClInclude>
-    <ClInclude Include="src\game\game.h">
-      <Filter>Source Files\game</Filter>
+    <ClInclude Include="src\scenes\Scene.h">
+      <Filter>Source Files\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scenes\Scenes.h">
+      <Filter>Source Files\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\Button.h">
+      <Filter>Source Files\ui</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

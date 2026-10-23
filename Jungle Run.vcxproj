@@ -110,7 +110,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>Level4</WarningLevel>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
@@ -127,7 +127,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>Level4</WarningLevel>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
@@ -145,77 +145,50 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\main.c" />
-    <ClCompile Include="src\core\app.c" />
-    <ClCompile Include="src\core\res.c" />
-    <ClCompile Include="src\scenes\menu.c" />
-    <ClCompile Include="src\scenes\story.c" />
-    <ClCompile Include="src\scenes\help.c" />
-    <ClCompile Include="src\scenes\donate.c" />
-    <ClCompile Include="src\scenes\gamemode.c" />
-    <ClCompile Include="src\scenes\intro.c" />
-    <ClCompile Include="src\scenes\gameplay.c" />
-    <ClCompile Include="src\game\assets.c" />
-    <ClCompile Include="src\game\physics.c" />
-    <ClCompile Include="src\game\collision.c" />
-    <ClCompile Include="src\game\map.c" />
-    <ClCompile Include="src\game\levels.c" />
-    <ClCompile Include="src\game\render.c" />
-    <ClCompile Include="src\core\SdlHandles.cpp">
-      <WarningLevel>Level4</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="src\game\GameAssets.cpp">
-      <WarningLevel>Level4</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="src\game\Pickup.cpp">
-      <WarningLevel>Level4</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="src\game\SmolGolem.cpp">
-      <WarningLevel>Level4</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="src\game\EntityFactory.cpp">
-      <WarningLevel>Level4</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="src\game\LevelLoader.cpp">
-      <WarningLevel>Level4</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="src\game\Player.cpp">
-      <WarningLevel>Level4</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="src\game\Hud.cpp">
-      <WarningLevel>Level4</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="src\game\Level.cpp">
-      <WarningLevel>Level4</WarningLevel>
-    </ClCompile>
-    <ClCompile Include="src\game\World.cpp">
-      <WarningLevel>Level4</WarningLevel>
-    </ClCompile>
+    <ClCompile Include="src\core\Game.cpp" />
+    <ClCompile Include="src\core\SdlHandles.cpp" />
+    <ClCompile Include="src\game\EntityFactory.cpp" />
+    <ClCompile Include="src\game\GameAssets.cpp" />
+    <ClCompile Include="src\game\Hud.cpp" />
+    <ClCompile Include="src\game\Level.cpp" />
+    <ClCompile Include="src\game\LevelLoader.cpp" />
+    <ClCompile Include="src\game\Pickup.cpp" />
+    <ClCompile Include="src\game\Player.cpp" />
+    <ClCompile Include="src\game\SmolGolem.cpp" />
+    <ClCompile Include="src\game\World.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\scenes\DonateScene.cpp" />
+    <ClCompile Include="src\scenes\GameModeScene.cpp" />
+    <ClCompile Include="src\scenes\GameplayScene.cpp" />
+    <ClCompile Include="src\scenes\HelpScene.cpp" />
+    <ClCompile Include="src\scenes\IntroScene.cpp" />
+    <ClCompile Include="src\scenes\MenuScene.cpp" />
+    <ClCompile Include="src\scenes\Scene.cpp" />
+    <ClCompile Include="src\scenes\StoryScene.cpp" />
+    <ClCompile Include="src\ui\Button.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\core\app.h" />
-    <ClInclude Include="src\core\res.h" />
-    <ClInclude Include="src\scenes\scene.h" />
-    <ClInclude Include="src\game\defs.h" />
-    <ClInclude Include="src\game\gamestate.h" />
-    <ClInclude Include="src\game\game.h" />
+    <ClInclude Include="src\core\Game.h" />
     <ClInclude Include="src\core\SdlHandles.h" />
     <ClInclude Include="src\game\Config.h" />
-    <ClInclude Include="src\game\GameAssets.h" />
-    <ClInclude Include="src\game\Entity.h" />
-    <ClInclude Include="src\game\Tile.h" />
-    <ClInclude Include="src\game\Trap.h" />
-    <ClInclude Include="src\game\Pickup.h" />
-    <ClInclude Include="src\game\SmolGolem.h" />
     <ClInclude Include="src\game\Decoration.h" />
+    <ClInclude Include="src\game\Entity.h" />
     <ClInclude Include="src\game\EntityFactory.h" />
-    <ClInclude Include="src\game\LevelLoader.h" />
-    <ClInclude Include="src\game\Player.h" />
+    <ClInclude Include="src\game\GameAssets.h" />
     <ClInclude Include="src\game\GigaGolem.h" />
-    <ClInclude Include="src\game\Parallax.h" />
     <ClInclude Include="src\game\Hud.h" />
     <ClInclude Include="src\game\Level.h" />
+    <ClInclude Include="src\game\LevelLoader.h" />
+    <ClInclude Include="src\game\Parallax.h" />
+    <ClInclude Include="src\game\Pickup.h" />
+    <ClInclude Include="src\game\Player.h" />
+    <ClInclude Include="src\game\SmolGolem.h" />
+    <ClInclude Include="src\game\Tile.h" />
+    <ClInclude Include="src\game\Trap.h" />
     <ClInclude Include="src\game\World.h" />
+    <ClInclude Include="src\scenes\Scene.h" />
+    <ClInclude Include="src\scenes\Scenes.h" />
+    <ClInclude Include="src\ui\Button.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Resource\Character\Idle\Idle_1.png" />
