@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -114,6 +114,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
       <AdditionalIncludeDirectories>$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -132,6 +133,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
       <AdditionalIncludeDirectories>$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -159,6 +161,36 @@
     <ClCompile Include="src\game\map.c" />
     <ClCompile Include="src\game\levels.c" />
     <ClCompile Include="src\game\render.c" />
+    <ClCompile Include="src\core\SdlHandles.cpp">
+      <WarningLevel>Level4</WarningLevel>
+    </ClCompile>
+    <ClCompile Include="src\game\GameAssets.cpp">
+      <WarningLevel>Level4</WarningLevel>
+    </ClCompile>
+    <ClCompile Include="src\game\Pickup.cpp">
+      <WarningLevel>Level4</WarningLevel>
+    </ClCompile>
+    <ClCompile Include="src\game\SmolGolem.cpp">
+      <WarningLevel>Level4</WarningLevel>
+    </ClCompile>
+    <ClCompile Include="src\game\EntityFactory.cpp">
+      <WarningLevel>Level4</WarningLevel>
+    </ClCompile>
+    <ClCompile Include="src\game\LevelLoader.cpp">
+      <WarningLevel>Level4</WarningLevel>
+    </ClCompile>
+    <ClCompile Include="src\game\Player.cpp">
+      <WarningLevel>Level4</WarningLevel>
+    </ClCompile>
+    <ClCompile Include="src\game\Hud.cpp">
+      <WarningLevel>Level4</WarningLevel>
+    </ClCompile>
+    <ClCompile Include="src\game\Level.cpp">
+      <WarningLevel>Level4</WarningLevel>
+    </ClCompile>
+    <ClCompile Include="src\game\World.cpp">
+      <WarningLevel>Level4</WarningLevel>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\core\app.h" />
@@ -167,6 +199,23 @@
     <ClInclude Include="src\game\defs.h" />
     <ClInclude Include="src\game\gamestate.h" />
     <ClInclude Include="src\game\game.h" />
+    <ClInclude Include="src\core\SdlHandles.h" />
+    <ClInclude Include="src\game\Config.h" />
+    <ClInclude Include="src\game\GameAssets.h" />
+    <ClInclude Include="src\game\Entity.h" />
+    <ClInclude Include="src\game\Tile.h" />
+    <ClInclude Include="src\game\Trap.h" />
+    <ClInclude Include="src\game\Pickup.h" />
+    <ClInclude Include="src\game\SmolGolem.h" />
+    <ClInclude Include="src\game\Decoration.h" />
+    <ClInclude Include="src\game\EntityFactory.h" />
+    <ClInclude Include="src\game\LevelLoader.h" />
+    <ClInclude Include="src\game\Player.h" />
+    <ClInclude Include="src\game\GigaGolem.h" />
+    <ClInclude Include="src\game\Parallax.h" />
+    <ClInclude Include="src\game\Hud.h" />
+    <ClInclude Include="src\game\Level.h" />
+    <ClInclude Include="src\game\World.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Resource\Character\Idle\Idle_1.png" />
