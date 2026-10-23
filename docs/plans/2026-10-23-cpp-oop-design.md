@@ -1,6 +1,6 @@
 # Jungle Run — Thiết kế chuyển C sang C++ (OOP)
 
-Ngày: 2026-10-23 · Trạng thái: **APPROVED** (review đa góc nhìn), chờ GĐ0 (chạy thử branch C) trước khi triển khai
+Ngày: 2026-10-23 · Trạng thái: **đã triển khai** (branch `refactor/cpp-oop`), chờ checklist runtime (mục 5)
 
 Nền: branch `refactor/scene-loop-memleak` (~2.400 dòng C, xem [2026-10-23-refactor-memory-leak-design.md](2026-10-23-refactor-memory-leak-design.md)).
 
@@ -441,3 +441,12 @@ Không dùng cầu nối `extern "C"` (xem quyết định #17).
 ### Arbiter (vòng 2: APPROVED)
 
 Mọi sửa đổi vòng 1 đã kiểm lại với file và `src/`; sửa nốt sơ đồ class (bỏ `clearEachFrame`). Kết luận: **APPROVED**. #23 (S13) người dùng đã quyết: kiểm tra song song C/C++ (#35).
+
+
+## 9. Ghi chú triển khai
+
+- Rà soát 4.5b: đạt — hitbox chạy dùng cỡ idle (`Player::hitInfo`), `onLedge` chỉ bị xóa trong `Player::jump`, `resolveAgainst` chép nguyên `collision_correction`, hằng số di chuyển giữ nguyên; kiểm tra song song C/C++ PARITY OK (82 kịch bản × 3000 frame) trước khi xóa code C, và bắt được 2 lỗi cài thử.
+- `core/Sdl.h` đổi tên thành `core/SdlHandles.h`: `SDL_ttf.h` có `#include "SDL.h"` (dấu nháy), MSVC tìm cả thư mục của header đang mở và Windows không phân biệt hoa thường → `Sdl.h` bị lấy nhầm thay cho `SDL.h`.
+- `kMaxTileCode` nằm trong `game/Config.h` (thiết kế ghi `LevelLoader`).
+- Sai khác nhỏ đã nêu trong kế hoạch: `Scene` nhận `Game&` qua constructor, 7 scene khai báo chung trong `scenes/Scenes.h`, `GameAssets` sở hữu cả 5 lớp nền (mỗi lớp nạp 1 lần), nền đất là `SDL_FRect` trong `Level`.
+- Build: Debug/Release x64, toàn project `/W4`, 0 lỗi, 0 warning (trước refactor C: 98 warning).
