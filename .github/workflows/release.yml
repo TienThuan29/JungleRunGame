@@ -1,0 +1,60 @@
+# Builds Release x64 on every PR / push to main; a push to main also publishes
+# a GitHub Release "build-N" with JungleRun.zip (exe + DLLs + Resource).
+# README links to releases/latest/download/JungleRun.zip, so it never needs editing.
+# Do not rename this file: run_number restarts and build-N tags would collide.
+name: Build & Release
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: windows-2022  # has toolset v143, which the project declares
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: microsoft/setup-msbuild@v2
+
+      - name: Build
+        run: msbuild "Jungle Run.vcxproj" -p:Configuration=Release -p:Platform=x64 -m -nologo -v:minimal
+
+      - name: Package
+        shell: pwsh
+        run: |
+          $out = "dist/JungleRun"
+          New-Item -ItemType Directory -Force $out | Out-Null
+          Copy-Item "x64/Release/Jungle Run.exe" $out
+          Copy-Item *.dll $out
+          Copy-Item Resource $out -Recurse
+          if ((Get-ChildItem $out -Filter *.dll).Count -ne 8) { throw "expected 8 DLLs in $out" }
+          if (-not (Test-Path "$out/Resource/Levels/course.txt")) { throw "Resource/Levels missing" }
+          Push-Location dist
+          7z a -tzip JungleRun.zip JungleRun | Out-Null
+          Pop-Location
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: JungleRun
+          path: dist/JungleRun
+          retention-days: 7
+
+      - name: Release
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: >-
+          gh release create "build-${{ github.run_number }}" dist/JungleRun.zip
+          --target "${{ github.sha }}"
+          --title "Jungle Run build ${{ github.run_number }}"
+          --generate-notes

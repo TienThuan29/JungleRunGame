@@ -1,4 +1,8 @@
 ﻿# Jungle-Run-F-code
+[![Build](https://github.com/TienThuan29/JungleRunGame/actions/workflows/release.yml/badge.svg)](https://github.com/TienThuan29/JungleRunGame/actions/workflows/release.yml)
+
+**[⬇ Download Jungle Run for Windows (x64)](https://github.com/TienThuan29/JungleRunGame/releases/latest/download/JungleRun.zip)** — unzip, then run `Jungle Run.exe`. Every merge to `main` publishes a new build ([all releases](https://github.com/TienThuan29/JungleRunGame/releases)).
+
 Welcome to Project "Jungle Run".
 Q&A:
 1/. How to set up SDL library to Microsoft Visual Studio?
