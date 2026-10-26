@@ -22,6 +22,15 @@ void FontDeleter::operator()(TTF_Font* p) const { TTF_CloseFont(p); track(Kind::
 void ChunkDeleter::operator()(Mix_Chunk* p) const { Mix_FreeChunk(p); track(Kind::Chunk, -1); }
 void MusicDeleter::operator()(Mix_Music* p) const { Mix_FreeMusic(p); track(Kind::Music, -1); }
 
+std::string normalizePath(std::string path) {
+#ifndef _WIN32
+	for (char& c : path) {
+		if (c == '\\') c = '/';
+	}
+#endif
+	return path;
+}
+
 namespace {
 TexturePtr fromSurface(SDL_Renderer* r, SDL_Surface* s, const std::string& what, bool keyBlack) {
 	if (!s) {
@@ -43,7 +52,7 @@ TexturePtr fromSurface(SDL_Renderer* r, SDL_Surface* s, const std::string& what,
 }
 
 TexturePtr loadTexture(SDL_Renderer* r, const std::string& path, bool keyBlack) {
-	return fromSurface(r, IMG_Load(path.c_str()), path, keyBlack);
+	return fromSurface(r, IMG_Load(normalizePath(path).c_str()), path, keyBlack);
 }
 
 TexturePtr renderText(SDL_Renderer* r, TTF_Font* font, const std::string& text, SDL_Color color) {
@@ -51,7 +60,7 @@ TexturePtr renderText(SDL_Renderer* r, TTF_Font* font, const std::string& text, 
 }
 
 FontPtr loadFont(const std::string& path, int size) {
-	TTF_Font* f = TTF_OpenFont(path.c_str(), size);
+	TTF_Font* f = TTF_OpenFont(normalizePath(path).c_str(), size);
 	if (!f) {
 		SDL_Log("font fail: %s: %s", path.c_str(), SDL_GetError());
 		return nullptr;
@@ -61,7 +70,7 @@ FontPtr loadFont(const std::string& path, int size) {
 }
 
 ChunkPtr loadChunk(const std::string& path, int volume) {
-	Mix_Chunk* c = Mix_LoadWAV(path.c_str());
+	Mix_Chunk* c = Mix_LoadWAV(normalizePath(path).c_str());
 	if (!c) {
 		SDL_Log("sound fail: %s: %s", path.c_str(), SDL_GetError());
 		return nullptr;
@@ -74,7 +83,7 @@ ChunkPtr loadChunk(const std::string& path, int volume) {
 }
 
 MusicPtr loadMusic(const std::string& path) {
-	Mix_Music* m = Mix_LoadMUS(path.c_str());
+	Mix_Music* m = Mix_LoadMUS(normalizePath(path).c_str());
 	if (!m) {
 		SDL_Log("music fail: %s: %s", path.c_str(), SDL_GetError());
 		return nullptr;

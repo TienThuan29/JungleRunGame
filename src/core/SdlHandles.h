@@ -26,6 +26,9 @@ using MusicPtr = std::unique_ptr<Mix_Music, MusicDeleter>;
 using WindowPtr = std::unique_ptr<SDL_Window, WindowDeleter>;
 using RendererPtr = std::unique_ptr<SDL_Renderer, RendererDeleter>;
 
+// Asset paths are written with Windows '\\' separators; this converts them for other platforms.
+std::string normalizePath(std::string path);
+
 TexturePtr loadTexture(SDL_Renderer* r, const std::string& path, bool keyBlack = false);
 TexturePtr renderText(SDL_Renderer* r, TTF_Font* font, const std::string& text, SDL_Color color);
 FontPtr loadFont(const std::string& path, int size);

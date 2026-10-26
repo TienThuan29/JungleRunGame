@@ -1,4 +1,5 @@
 #include "game/LevelLoader.h"
+#include "core/SdlHandles.h"
 #include <charconv>
 #include <fstream>
 #include <iterator>
@@ -9,7 +10,7 @@ namespace {
 constexpr int kKeyTile = 21;
 
 bool readLines(const std::string& path, std::vector<std::string>& lines) {
-	std::ifstream in(path, std::ios::binary);
+	std::ifstream in(sdl::normalizePath(path), std::ios::binary);
 	if (!in) return false;
 	std::string text((std::istreambuf_iterator<char>(in)), std::istreambuf_iterator<char>());
 	if (text.compare(0, 3, "\xEF\xBB\xBF") == 0) text.erase(0, 3);  // UTF-8 BOM
@@ -80,7 +81,7 @@ int gridIndex(Course& c, const std::string& dir, const std::string& name, const 
 		if (c.gridNames[i] == name) return static_cast<int>(i);
 	}
 	const std::string path = dir + "\\" + name + ".txt";
-	if (!std::ifstream(path)) {
+	if (!std::ifstream(sdl::normalizePath(path))) {
 		error = where + "cannot open " + path + " (run the game from the repo folder)";
 		return -1;
 	}
