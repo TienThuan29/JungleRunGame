@@ -15,14 +15,18 @@ public:
 	Entity(const Entity&) = delete;
 	Entity& operator=(const Entity&) = delete;
 
-	virtual void preCollide(const Player&, float) {}       // SmolGolem moves here, before its own hit test
+	virtual void update(const Player&, World&, float) {}   // every tick, before its own hit test
 	virtual void onTouch(Player&, World&) {}               // Pickup effects
+	virtual bool hit(World&) { return false; }             // sword; true if it reacted
 	virtual bool isSolid() const { return false; }
 	virtual bool isLethal() const { return false; }
 	virtual HurtSound hurtSound() const { return HurtSound::Damage; }
 	virtual bool grantsKey() const { return false; }       // a Key that has been picked up
 	virtual bool isTaken() const { return false; }         // a Pickup that has been picked up
-	virtual void animate(Uint64) {}                        // render phase: Trap updates its stored flags
+	virtual bool isCheckpoint() const { return false; }
+	virtual bool isDead() const { return false; }          // no collision any more (dying animation)
+	virtual bool isGone() const { return false; }          // Level removes it
+	virtual void animate(Uint64) {}                        // world ms; Trap updates its stored flags
 	virtual void draw(SDL_Renderer* r, const GameAssets& a, float scrollX) const = 0;
 
 	const SDL_FRect& bounds() const { return box_; }

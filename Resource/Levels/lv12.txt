@@ -7,6 +7,7 @@
 # 13 first aid kit (+1 life) | 14 health potion (5 = good ending) | 21 key (triggers 'onkey' in course.txt)
 # 15 / 16 / 17 / 18 lightning super slow / slow / medium / fast (draws 2 cells above)
 # 19 small golem (chases the player) | 22 sparkle (decoration)
+# 23 checkpoint star (Easy/Medium respawn; none past an arena) | 24 / 25 arrow trap shooting left / right | 26 fast small golem
 # Do not put 8-10 or 15-18 in rows 0-1, or 6 in row 0: they would be drawn off screen.
  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0  0  0  1
  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0  0  0  1

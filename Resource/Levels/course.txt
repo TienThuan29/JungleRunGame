@@ -3,6 +3,8 @@
 #   map A [B ...]   one 1200 px segment per grid file (Resource/Levels/A.txt)
 #   onkey A B       when the key (tile 21) is picked up, segment A is rebuilt from grid B at the same x
 #   finish X        reaching x >= X (pixels from the left edge of the course) ends the run
+#   arena           (instead of finish) boss fight from here; put >= 4 ground platforms after it, no checkpoint past it
+# Worlds are listed in worlds.txt; this file is World 1.
 ground 3
 map lv00
 ground 2

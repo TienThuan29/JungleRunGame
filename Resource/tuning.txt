@@ -1,0 +1,53 @@
+# Jungle Run tuning: edit, save, then press R in game (or start a run) to use the new values.
+# One "key value" per line, # starts a comment. A bad or out-of-range value keeps the default
+# and a warning box lists the line. Delete a line to get its default back.
+# "per tick" = the game runs 60 ticks per second.
+
+# --- player ---
+run_accel 0.3            # px/tick added per tick while running
+run_max 2.5              # px/tick top speed
+friction 0.8             # speed kept per tick when no key is held (0-1)
+jump_vy -9               # px/tick upward speed at take-off (more negative = higher)
+gravity 0.25             # px/tick added to falling speed per tick
+fall_accel 0.3           # px/tick added per tick while holding Down in the air
+immortal_sec 1           # invulnerable after a hit, seconds
+respawn_immortal_sec 2   # invulnerable after a checkpoint respawn, seconds
+
+# --- sword ---
+attack_sec 0.2           # how long a swing hurts, seconds
+attack_cooldown_sec 0.4  # time between swings, seconds
+attack_w 70              # reach in front of the player, px
+attack_h 60              # height of the hit box, px
+
+# --- giant golem, chase ---
+boss_speed 75            # px/s base speed (it also speeds up while off screen)
+boss_delay_sec 0.5       # seconds before it starts moving
+boss_fire_sec 4          # seconds between arm throws
+boss_fire_range 900      # only throws when this close, px
+boss_warn_px 400         # red arrow on the left edge when it is off screen but this close, px
+respawn_boss_gap 900     # after a checkpoint respawn the golem restarts this far behind, px
+
+# --- projectiles ---
+arm_speed 260            # thrown golem arm, px/s
+arrow_speed 320          # arrow trap arrows, px/s
+arrow_every_sec 2.5      # one arrow per trap every N seconds
+
+# --- small golems ---
+smol_speed 40            # px/s added per tick while chasing
+smol_max 120             # px/s top speed
+smol_detect 150          # starts chasing when the player is this close, px
+smol_fast_mul 2          # speed multiplier for the orange golem (tile 26)
+
+# --- boss fight (worlds with an arena) ---
+boss_hp 5                # sword hits to win
+boss_idle_sec 1          # pause between attacks, seconds
+boss_charge_sec 0.8      # laser warning (energy ball at the arm), seconds
+boss_beam_sec 0.6        # laser duration, seconds - stay on the ground
+boss_open_sec 2          # time you can hit it after an attack, seconds
+
+# --- feel ---
+shake_hit 8              # screen shake on a hit, px
+shake_decay 30           # shake fades by this many px per second
+
+# --- testing ---
+debug 0                  # 1 = F1 invulnerable, F2 next checkpoint, F3 jump to the end, F5 reload this file

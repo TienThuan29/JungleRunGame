@@ -3,7 +3,7 @@
 namespace jr {
 namespace {
 const char* const kModes[3] = { "Easy", "Medium", "Hard" };
-constexpr int kDifficulty[3] = { cfg::kDifficultyEasy, cfg::kDifficultyMedium, cfg::kDifficultyHard };
+const char* const kNotes[3] = { "5 lives, checkpoints", "3 lives, checkpoints", "1 life, no checkpoints" };
 constexpr SDL_Color kModeColor[3] = { { 0, 255, 0, 255 }, { 255, 200, 0, 255 }, { 255, 0, 0, 255 } };
 constexpr int kModeX[3] = { 435, 415, 435 };
 }
@@ -37,6 +37,16 @@ GameModeScene::GameModeScene(Game& g) : Scene(g, SceneId::GameMode) {
 void GameModeScene::refreshMode() {
 	const int i = game_.settings().modeIndex;
 	mode_ = sdl::renderText(game_.renderer(), modeFont_.get(), kModes[i], kModeColor[i]);
+	const sdl::FontPtr font = sdl::loadFont("Resource\\Fonts\\Kanit-Light.ttf", 20);
+	note_ = sdl::renderText(game_.renderer(), font.get(), kNotes[i], color::black);
+}
+
+void GameModeScene::step(int delta) {  // delta 1 = next, 2 = previous (mod 3)
+	Settings& s = game_.settings();
+	s.modeIndex = (s.modeIndex + delta) % 3;
+	s.difficulty = cfg::kLives[s.modeIndex];
+	refreshMode();
+	game_.save();
 }
 
 void GameModeScene::handleEvent(const SDL_Event& e) {
@@ -51,15 +61,21 @@ void GameModeScene::handleEvent(const SDL_Event& e) {
 			Mix_PlayChannel(-1, game_.click(), 0);
 			go(SceneId::Menu);
 		}
-		const int step = left_->hit(x, y) ? 2 : right_->hit(x, y) ? 1 : 0;  // 2 == -1 mod 3
-		if (step) {
-			Settings& s = game_.settings();
-			s.modeIndex = (s.modeIndex + step) % 3;
-			s.difficulty = kDifficulty[s.modeIndex];
-			refreshMode();
+		const int delta = left_->hit(x, y) ? 2 : right_->hit(x, y) ? 1 : 0;
+		if (delta) {
+			Mix_PlayChannel(-1, game_.click(), 0);
+			step(delta);
 		}
 	}
-	else if (e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_ESCAPE) {
+	else if (isKey(e, SDLK_LEFT) || isKey(e, SDLK_a)) {
+		Mix_PlayChannel(-1, game_.click(), 0);
+		step(2);
+	}
+	else if (isKey(e, SDLK_RIGHT) || isKey(e, SDLK_d)) {
+		Mix_PlayChannel(-1, game_.click(), 0);
+		step(1);
+	}
+	else if (isKey(e, SDLK_ESCAPE) || isConfirm(e)) {
 		go(SceneId::Menu);
 	}
 }
@@ -67,6 +83,8 @@ void GameModeScene::handleEvent(const SDL_Event& e) {
 void GameModeScene::render(SDL_Renderer* r) {
 	static constexpr SDL_Rect trick{ 390, 300, 190, 70 };
 	const SDL_Rect modeRect = sdl::sized(mode_.get(), kModeX[game_.settings().modeIndex], 265);
+	SDL_Rect noteRect = sdl::sized(note_.get(), 0, 392);
+	noteRect.x = 482 - noteRect.w / 2;
 	SDL_RenderCopy(r, bg_.get(), nullptr, nullptr);
 	SDL_RenderCopy(r, trick_.get(), nullptr, &trick);
 	back_->draw(r);
@@ -74,5 +92,6 @@ void GameModeScene::render(SDL_Renderer* r) {
 	right_->draw(r);
 	SDL_RenderCopy(r, title_.get(), nullptr, &titleRect_);
 	SDL_RenderCopy(r, mode_.get(), nullptr, &modeRect);
+	SDL_RenderCopy(r, note_.get(), nullptr, &noteRect);
 }
 }

@@ -99,7 +99,7 @@ SDL_Rect sized(SDL_Texture* t, int x, int y) {
 }
 
 Session::Session() {
-	if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_TIMER) != 0) {
+	if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_TIMER | SDL_INIT_GAMECONTROLLER) != 0) {
 		SDL_Log("SDL_Init: %s", SDL_GetError());
 		return;
 	}

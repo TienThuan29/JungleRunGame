@@ -27,7 +27,7 @@ void DonateScene::handleEvent(const SDL_Event& e) {
 		Mix_PlayChannel(-1, game_.click(), 0);
 		go(SceneId::Menu);
 	}
-	else if (e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_ESCAPE) {
+	else if (isKey(e, SDLK_ESCAPE) || isConfirm(e)) {
 		go(SceneId::Menu);
 	}
 }

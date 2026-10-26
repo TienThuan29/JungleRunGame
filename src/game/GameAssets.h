@@ -3,7 +3,10 @@
 #include "game/Entity.h"
 
 namespace jr {
-enum class TextureId { Tileset, Ground, Fire1, Fire2, Fire3, Ceiling, Saw, Lightning2, Items, Golem, Sparkle, Count };
+enum class TextureId {
+	Tileset, Ground, Fire1, Fire2, Fire3, Ceiling, Saw, Lightning2, Items, Golem, Sparkle,
+	Laser, Arm, ArrowTrap, Arrow, Slash, Count
+};
 
 // Owns every gameplay texture, font and sound. Entities hold raw pointers borrowed from here,
 // so GameplayScene declares GameAssets before World.
@@ -17,11 +20,13 @@ public:
 	SDL_Texture* background(int i) const { return background_[i].get(); }
 	TTF_Font* hudFont() const { return hudFont_.get(); }
 	TTF_Font* overFont() const { return overFont_.get(); }
+	TTF_Font* smallFont() const { return smallFont_.get(); }
 	Mix_Chunk* hurt(HurtSound s) const;
 	Mix_Chunk* itemPickUp() const { return itemPickUp_.get(); }
 	Mix_Chunk* landing() const { return landing_.get(); }
 	Mix_Chunk* jumpSound() const { return jumpSound_.get(); }
-	Mix_Music* inGameMusic() const { return inGame_.get(); }
+	Mix_Chunk* swing() const { return swing_.get(); }
+	Mix_Music* inGameMusic(int track) const { return inGame_[static_cast<size_t>(track - 1)].get(); }  // 1-3
 	Mix_Music* endingMusic(int i) const { return ending_[i].get(); }
 private:
 	std::array<sdl::TexturePtr, static_cast<size_t>(TextureId::Count)> tex_;
@@ -29,9 +34,9 @@ private:
 	std::array<sdl::TexturePtr, 8> run_;
 	std::array<sdl::TexturePtr, 4> jump_;
 	std::array<sdl::TexturePtr, 5> background_;
-	sdl::FontPtr hudFont_, overFont_;
-	sdl::ChunkPtr damage_, electric_, spike_, itemPickUp_, landing_, jumpSound_;
-	sdl::MusicPtr inGame_;
+	sdl::FontPtr hudFont_, overFont_, smallFont_;
+	sdl::ChunkPtr damage_, electric_, spike_, itemPickUp_, landing_, jumpSound_, swing_;
+	std::array<sdl::MusicPtr, 3> inGame_;
 	std::array<sdl::MusicPtr, 3> ending_;
 };
 }

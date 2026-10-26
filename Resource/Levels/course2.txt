@@ -1,0 +1,21 @@
+# World 2: Temple Ruins
+# ground N | map A [B ...] | onkey A B | finish X | arena (see course.txt)
+ground 3
+map lv16
+ground 2
+map lv17
+ground 2
+map lv01
+ground 2
+map lv18
+ground 2
+map lv19
+ground 2
+map lv09
+ground 2
+map lv20
+ground 2
+map lv11
+ground 4
+finish 15984
+# course length: 16656 px

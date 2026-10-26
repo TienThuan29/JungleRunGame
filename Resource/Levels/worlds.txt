@@ -1,0 +1,5 @@
+# Jungle Run worlds, in play order (at most 3). Finishing world N (True or Good End) unlocks world N+1.
+#   <course file in this folder>  <in-game music 1-3>  <title (no #)>
+course.txt   3  The Relic
+course2.txt  1  Temple Ruins
+course3.txt  2  Golem's Lair
