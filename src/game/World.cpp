@@ -53,6 +53,7 @@ void World::attack() {
 }
 
 void World::setCheckpoint(float x, float feetY) {
+	if (hasCheckpoint_ && x <= cpX_) return;  // an earlier, skipped star never moves the respawn point back
 	hasCheckpoint_ = true;
 	cpX_ = x;
 	cpFeet_ = feetY;
@@ -229,7 +230,7 @@ HudInfo World::hudInfo() const {
 		camLeft - (boss_.x() + cfg::kGigaGolemSize) < tuning_.bossWarnPx && ticks_ / 15 % 2 == 0;
 	if (arena_ && boss_.fighting()) {
 		h.bossHp = boss_.hp();
-		h.bossMaxHp = static_cast<int>(tuning_.bossHp);
+		h.bossMaxHp = boss_.maxHp();
 	}
 	h.god = god_;
 	return h;
@@ -242,13 +243,13 @@ void World::renderOver(SDL_Renderer* r, const char* title, SDL_Color fg) {
 	hud_.drawOver(r, assets_, title, fg, overReady(), over_);
 }
 
-void World::render(SDL_Renderer* r) {
+void World::render(SDL_Renderer* r, bool paused) {
 	switch (status_) {
 	case Status::GameOver: renderOver(r, "Bad End", SDL_Color{ 210, 8, 45, 255 }); break;
 	case Status::TrueEnd: renderOver(r, "True End", SDL_Color{ 200, 112, 126, 255 }); break;
 	case Status::GoodEnd: renderOver(r, "Good End", SDL_Color{ 96, 106, 116, 255 }); break;
 	case Status::Playing: {
-		const float sx = scrollX_ + shakeOffset();
+		const float sx = scrollX_ + (paused ? 0.0f : shakeOffset());
 		parallax_.draw(r, assets_, sx);
 		level_.drawSegments(r, assets_, sx);
 		level_.drawGrounds(r, assets_, sx);

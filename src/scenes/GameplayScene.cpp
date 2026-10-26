@@ -106,7 +106,9 @@ SceneId GameplayScene::run() {
 			}
 			if (e.type != SDL_KEYDOWN) continue;
 			const bool over = world_->overReady();
-			switch (e.key.keysym.sym) {
+			const SDL_Keycode sym = e.key.keysym.sym;
+			if (e.key.repeat && sym != SDLK_SPACE && sym != SDLK_UP && sym != SDLK_w) continue;  // holding Esc/R/F5 must not repeat
+			switch (sym) {
 			case SDLK_ESCAPE:
 				if (world_->isOver()) break;
 				paused_ = !paused_;
@@ -122,7 +124,7 @@ SceneId GameplayScene::run() {
 			case SDLK_k:
 			case SDLK_f:
 			case SDLK_LCTRL:
-				if (!paused_ && !e.key.repeat) world_->attack();
+				if (!paused_) world_->attack();
 				break;
 			case SDLK_r:
 				if (paused_ || over) {
@@ -146,7 +148,7 @@ SceneId GameplayScene::run() {
 				break;
 			case SDLK_F2:
 			case SDLK_F3:
-				if (testKeys() && !paused_) world_->debugWarp(e.key.keysym.sym == SDLK_F3);
+				if (testKeys() && !paused_) world_->debugWarp(sym == SDLK_F3);
 				break;
 			case SDLK_F5:
 				if (testKeys()) reloadTuning();
@@ -173,7 +175,7 @@ SceneId GameplayScene::run() {
 		}
 		if (world_->isOver() && !recorded_) record();
 		SDL_RenderClear(r);
-		world_->render(r);
+		world_->render(r, paused_);
 		if (paused_) {
 			SDL_SetRenderDrawColor(r, 0, 0, 0, 150);
 			SDL_RenderFillRect(r, nullptr);

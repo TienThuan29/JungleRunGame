@@ -31,7 +31,7 @@ public:
 	void tick(const InputState& in);                 // one fixed step
 	void jump() { player_.jump(); }
 	void attack();
-	void render(SDL_Renderer* r);                    // no clear / present
+	void render(SDL_Renderer* r, bool paused);       // no clear / present; paused = no screen shake
 	bool overReady() const;                          // ending screen shown >= 2 s
 
 	// used by entities and the boss

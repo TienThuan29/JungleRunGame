@@ -123,7 +123,12 @@ bool Game::handleGlobal(const SDL_Event& e) {
 		if (!pad_) pad_.reset(SDL_GameControllerOpen(e.cdevice.which));
 		return true;
 	case SDL_CONTROLLERDEVICEREMOVED:
-		if (pad_ && SDL_JoystickInstanceID(SDL_GameControllerGetJoystick(pad_.get())) == e.cdevice.which) pad_.reset();
+		if (pad_ && SDL_JoystickInstanceID(SDL_GameControllerGetJoystick(pad_.get())) == e.cdevice.which) {
+			pad_.reset();
+			for (int i = 0; i < SDL_NumJoysticks() && !pad_; ++i) {  // switch to another connected pad
+				if (SDL_IsGameController(i)) pad_.reset(SDL_GameControllerOpen(i));
+			}
+		}
 		return true;
 	case SDL_CONTROLLERBUTTONDOWN: {
 		const SDL_Keycode k = padKey(e.cbutton.button);

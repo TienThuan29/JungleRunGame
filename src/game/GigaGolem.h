@@ -29,6 +29,7 @@ public:
 
 	Phase phase() const { return phase_; }
 	int hp() const { return hp_; }
+	int maxHp() const { return maxHp_; }
 	float x() const { return x_; }
 	float right() const { return x_ + 0.75f * cfg::kGigaGolemSize; }  // chase: the edge that catches
 
@@ -45,7 +46,7 @@ private:
 
 	Phase phase_ = Phase::Chase;
 	float x_ = 0, y_ = 0, dx_ = 0, t_ = 0, len_ = 1, arenaX_ = 0, fireT_ = 0, flash_ = 0;
-	int hp_ = 0, cycle_ = 0;
+	int hp_ = 0, maxHp_ = 1, cycle_ = 0;
 	bool windup_ = false;
 };
 }

@@ -97,6 +97,7 @@ private:
 	std::vector<Button> arrows_;  // left/right per row
 	std::unique_ptr<Button> back_;
 	int selected_ = 0;
+	bool fullscreenShown_ = false;  // F11 is handled globally: re-render the value when it changes
 };
 
 class WorldSelectScene final : public Scene {

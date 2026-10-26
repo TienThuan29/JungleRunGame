@@ -38,7 +38,10 @@ void SettingsScene::refresh(int row) {
 	std::string text;
 	if (row == 0) text = std::to_string(s.music * 100 / 128) + "%";
 	else if (row == 1) text = std::to_string(s.sfx * 100 / 128) + "%";
-	else text = s.fullscreen ? "On" : "Off";
+	else {
+		text = s.fullscreen ? "On" : "Off";
+		fullscreenShown_ = s.fullscreen;
+	}
 	values_[row] = sdl::renderText(game_.renderer(), font_.get(), text, color::black);
 }
 
@@ -92,6 +95,7 @@ void SettingsScene::handleEvent(const SDL_Event& e) {
 }
 
 void SettingsScene::render(SDL_Renderer* r) {
+	if (game_.settings().fullscreen != fullscreenShown_) refresh(2);
 	SDL_RenderCopy(r, bg_.get(), nullptr, nullptr);
 	SDL_Rect t = sdl::sized(title_.get(), 0, 182);
 	t.x = 482 - t.w / 2;

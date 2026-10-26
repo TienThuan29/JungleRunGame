@@ -15,7 +15,7 @@ void GigaGolem::startArena(float arenaX, int hp) {
 	arenaX_ = arenaX;
 	x_ = arenaX + 40;
 	y_ = cfg::kGroundTop - kFeet;
-	hp_ = hp;
+	hp_ = maxHp_ = hp;
 	cycle_ = 0;
 	flash_ = 0;
 	windup_ = false;

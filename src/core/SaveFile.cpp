@@ -6,9 +6,9 @@
 
 namespace jr {
 namespace {
-std::string savePath() {
+std::filesystem::path savePath() {  // SDL returns UTF-8; u8path keeps non-ASCII folders working on Windows
 	const sdl::SdlString base(SDL_GetBasePath());
-	return base ? std::string(base.get()) + "save.txt" : std::string("save.txt");
+	return base ? std::filesystem::u8path(base.get()) / "save.txt" : std::filesystem::path("save.txt");
 }
 
 bool toInt(const std::string& s, long long& v) {
@@ -48,7 +48,9 @@ void loadSettings(Settings& s) {
 }
 
 void saveSettings(const Settings& s) {
-	const std::string path = savePath(), tmp = path + ".tmp";
+	const std::filesystem::path path = savePath();
+	std::filesystem::path tmp = path;
+	tmp += ".tmp";
 	{
 		std::ofstream out(tmp, std::ios::trunc);
 		out << "# Jungle Run save file\n"
@@ -59,13 +61,14 @@ void saveSettings(const Settings& s) {
 				if (s.best[w][m]) out << bestKey(w, m) << " " << s.best[w][m] << "\n";
 			}
 		}
+		out.close();  // flush first, so a failed write never replaces the good file
 		if (!out) {
-			SDL_Log("save: cannot write %s", tmp.c_str());
+			SDL_Log("save: cannot write %s", tmp.u8string().c_str());
 			return;
 		}
 	}
 	std::error_code ec;
 	std::filesystem::rename(tmp, path, ec);
-	if (ec) SDL_Log("save: cannot replace %s: %s", path.c_str(), ec.message().c_str());
+	if (ec) SDL_Log("save: cannot replace %s: %s", path.u8string().c_str(), ec.message().c_str());
 }
 }

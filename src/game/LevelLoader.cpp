@@ -150,6 +150,10 @@ bool loadCourse(const std::string& dir, const std::string& file, Course& out, st
 			}
 		}
 		else if (t[0] == "map" && t.size() >= 2) {
+			if (out.arena > 0) {
+				error = where + "no map after 'arena' (the arena is plain ground)";
+				return false;
+			}
 			for (size_t k = 1; k < t.size(); ++k) {
 				const int g = gridIndex(out, dir, t[k], where, error);
 				if (g < 0) return false;

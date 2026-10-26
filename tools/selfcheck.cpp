@@ -53,6 +53,14 @@ int main() {
 		check(loadCourse(dir, "course3.txt", c, error) && c.arena > 0 && c.finish == 0, "course3.txt ends in an arena");
 	}
 
+	{
+		std::ofstream("x64\\selfcheck_course.txt") << "ground 1\narena\nground 4\nmap lv00\n";
+		Course c;
+		error.clear();
+		check(!loadCourse("x64", "selfcheck_course.txt", c, error) && error.find("no map after") != std::string::npos,
+			"a map inside the arena is rejected");
+	}
+
 	Tuning t;
 	std::string problems;
 	loadTuning("Resource\\tuning.txt", t, problems);
