@@ -1,0 +1,18 @@
+# World 3: Golem's Lair - ends with the boss fight
+# ground N | map A [B ...] | onkey A B | finish X | arena (see course.txt)
+ground 3
+map lv21
+ground 2
+map lv03
+ground 2
+map lv05 lv06
+ground 2
+map lv12
+ground 2
+map lv20
+ground 2
+map lv22
+ground 2
+arena
+ground 5
+# course length: 15120 px

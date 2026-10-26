@@ -1,0 +1,27 @@
+# Jungle Run level grid: 16 rows x 24 numbers. Row 0 is the top; 24 columns = one 1200 px screen; each cell 50 px.
+# 0 empty | 1 brick | 2 slope | 3 wide platform (3 cells)
+# 4 fire trap lv1 | 5 fire trap lv2 | 6 fire trap lv3 (draws 1 cell above)
+# 7 ceiling spike, upside down | 20 ceiling spike
+# 8 / 9 / 10 falling ceiling slow / medium / fast (draws 2 cells above; solid while down)
+# 11 floor saw | 12 ceiling saw
+# 13 first aid kit (+1 life) | 14 health potion (5 = good ending) | 21 key (triggers 'onkey' in course.txt)
+# 15 / 16 / 17 / 18 lightning super slow / slow / medium / fast (draws 2 cells above)
+# 19 small golem (chases the player) | 22 sparkle (decoration)
+# 23 checkpoint star (Easy/Medium respawn; none past an arena) | 24 / 25 arrow trap shooting left / right | 26 fast small golem
+# Do not put 8-10 or 15-18 in rows 0-1, or 6 in row 0: they would be drawn off screen.
+ 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+ 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+ 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+ 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+ 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+ 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+ 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+ 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+ 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+ 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+ 0  0  0  0  0  0  0  0  0  0  0 14  0  0  0  0  0  0  0  0  0  0  0  0
+ 0  0  0  0  0  0  0  0  0  0  3  0  0  0  0  0  0  0  0  0  0  0  0  0
+ 0  0  0  0 13  0  0  0  0  0  0  0  0  0  0  0 14  0  0  0 23  0  0  0
+ 1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1
+ 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+ 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
