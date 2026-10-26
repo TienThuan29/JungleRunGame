@@ -1,0 +1,4 @@
+SwordSwing.wav is swish-7.wav from "Swishes Sound Pack", converted to 16-bit mono.
+Author: artisticdude
+Source: https://opengameart.org/content/swishes-sound-pack
+License: CC0 1.0 Universal (public domain) - https://creativecommons.org/publicdomain/zero/1.0/
