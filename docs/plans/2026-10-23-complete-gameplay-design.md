@@ -1,6 +1,6 @@
 # Jungle Run: nâng cấp thành gameplay hoàn chỉnh
 
-Trạng thái: BẢN NHÁP, chưa triển khai. Đã qua 3 review (Skeptic, Constraint Guardian, User Advocate) nhưng kết quả CHƯA được đưa vào tài liệu này. Các điểm chặn đã biết: input phải áp dụng trong từng tick 60 Hz (4.1); hình học laser/cánh tay của boss để lộ vùng miễn nhiễm (4.13); hồi sinh trong sàn đấu chưa định nghĩa; rung màn phải giữ viewport của logical size (4.8); đổi tên `course.txt` phải sửa bước kiểm tra trong `release.yml`; tay cầm thiếu nút R/X/N.
+Trạng thái: đã chốt sau 3 review (mục 10 ghi phân xử; mục 10 thắng khi mâu thuẫn với mục 4). Triển khai trên `feat/complete-gameplay`.
 
 ## 1. Tóm tắt cách hiểu (đã xác nhận)
 - Nâng game từ "một màn chạy dài, 3 kết thúc" thành game hoàn chỉnh trên 4 mảng: vòng chơi lõi, trình bày, tiến trình, nội dung.
@@ -156,3 +156,53 @@ Menu → Play → WorldSelect(world) → [Intro lần đầu] → Gameplay: đ�
 | 12 | Golem nhanh là biến thể duy nhất | Golem nhảy, golem bay | Không có asset bay; nhảy cần logic mặt đất riêng |
 | 13 | Debug keys trong `_DEBUG` | Cheat trong Release | Không lộ cheat cho người chơi |
 | 14 | Intro chỉ chạy lần đầu | Mỗi lần Play | Đỡ phiền khi chơi lại |
+
+## 10. Phân xử review (Arbiter)
+
+Ba reviewer: Skeptic (S), Constraint Guardian (C), User Advocate (U). Quyết định dưới đây ghi đè mục 4 khi khác nhau.
+
+### Chấp nhận, sửa thiết kế
+| Nguồn | Vấn đề | Sửa |
+|---|---|---|
+| S1 | Input áp dụng mỗi frame, physics mỗi tick → cảm giác vẫn phụ thuộc FPS | `World::tick(InputState)` gọi `player.input()` trong từng tick; scene chỉ lấy mẫu phím mỗi frame |
+| S2, C3 | Kẹt cửa sổ → tua nhanh | Kẹp chính accumulator ở 5 tick |
+| S3 | `Player::hurt` / bất tử / boss delay / màn kết dùng đồng hồ máy | Mọi mốc gameplay dùng `World::time()` (= số tick / 60); `animFrame` chỉ cho hoạt ảnh trang trí |
+| S4, U6 | Vùng miễn nhiễm cạnh boss, cánh tay bay ngang hông không trúng người đứng | Thân boss gây sát thương + đẩy lùi khi chạm; vùng laser bắt đầu từ mép thân; cánh tay trong sàn đấu bay sát đất; cánh tay khi đuổi nhắm thẳng vào người chơi |
+| S5 | Đứng yên thì nhân vật quay phải, không chém được sang trái | Đứng yên giữ hướng cũ (bỏ quirk `flip = 0`); đòn chém theo hướng đang nhìn |
+| S6 | Laser thấp chỉ có khe nhảy 167 ms | Bỏ laser thấp. Laser ngang ngực (y≈476) = đứng yên dưới đất; cánh tay sát đất = nhảy |
+| S7, U7 | Hồi sinh trong sàn đấu chưa định nghĩa | Chết trong sàn đấu (Easy/Medium) → hồi sinh trong sàn đấu, boss hồi đầy máu và trồi lên lại; Hard → Bad End |
+| S8 | Camera giật 350 px khi vào sàn đấu | Camera trượt dần (10%/tick) tới vị trí khoá |
+| S9, C4 | Rung màn bằng viewport phá letterbox | Rung = cộng độ lệch vào `scrollX` khi vẽ, không đụng viewport |
+| S10, U1, U2 | Tay cầm thiếu nút; B trên menu thoát game | A=Space, B=Esc, X=J, Y=R, Back=X, Start=Esc, RB=N, D-pad=mũi tên; event giả có cả `sym` và `scancode`; di chuyển đọc trực tiếp D-pad/cần trái (deadzone 12000); ESC ở menu chính không thoát nữa |
+| S11 | `Mix_Volume` nhân với volume từng chunk | SFX mặc định 128 (giữ âm lượng cũ), nhạc mặc định 32 (như cũ) |
+| S12, C5 | `SDL_GetBasePath` có thể NULL, ghi file hỏng | NULL → `save.txt` ở thư mục hiện tại; ghi `save.txt.tmp` rồi `std::filesystem::rename` |
+| S13 | Menu 960x668 scale 1.197x xấu | Cửa sổ vẫn đổi kích thước như cũ; logical size chỉ để fullscreen scale có viền |
+| S14 | Loader chưa kiểm sàn đấu | `arena` (không tham số) = vị trí con trỏ hiện tại; bắt buộc có ground phủ kín 1200 px sau đó; không có checkpoint (23) từ `arena` trở đi; course có `arena` thì không có `finish`; tên thế giới không chứa `#`; tối đa 3 thế giới |
+| S15 | Hoạt ảnh một lần chạy theo đồng hồ chung | Theo thời gian trong trạng thái của boss/golem |
+| S16 | `Entity::update` trùng `preCollide` | Đổi tên `preCollide` thành `update(const Player&, World&, float)`; cảnh báo boss chỉ khi boss ra khỏi màn hình mà ở gần (`boss_warn_px` 400) |
+| C1 | Đổi tên `course.txt` làm hỏng CI | Không đổi tên: thế giới 1 vẫn là `course.txt`. CI kiểm thêm `worlds.txt`, `tuning.txt` và build cả Debug |
+| C2 | Giấy phép | Thêm mục ghi công (CREDITS) trong README, liệt kê cả pack có sẵn và điều khoản của chúng |
+| C6 | `tuning.txt` là dữ liệu người dùng | Bảng `{tên, trường, min, max}`; giá trị sai/ngoài khoảng → giữ mặc định và hiện hộp cảnh báo liệt kê dòng lỗi; `std::from_chars`; tối đa 64 projectile; bẫy tên chỉ bắn khi cách người chơi < 1300 px |
+| C7 | Mask `Uint32` với 51 frame | `ArrowTrap` là lớp riêng; sheet thật ra là 17 frame 96x32 (tên bay ra ở frame 9) |
+| C8 | Texture chữ | Đồng hồ cache theo 1/10 giây; chữ màn kết dựng một lần |
+| C10, C11 | Bảo trì / W4 | Đăng ký mọi file mới trong `.vcxproj` và `.filters`; Debug và Release đều 0 warning |
+| U3 | Hard vẫn hiện ngôi sao | Hard không tạo checkpoint; World Select ghi "Hard: no checkpoints" |
+| U4 | Không thấy độ khó khi chọn thế giới | Tiêu đề World Select ghi độ khó; kỷ lục là của độ khó đang chọn |
+| U5 | Báo trước laser | Tiếng điện khi tụ năng lượng + quả cầu năng lượng ở đầu tay; ném tay có hoạt ảnh vung |
+| U8 | Người chơi thử chỉ có bản Release | `tuning.txt` được đọc lại mỗi lần R/thế giới mới; phím F1-F3, F5 bật bằng `debug 1` trong `tuning.txt` (hoặc bản Debug) |
+| U9 | Đơn vị khó hiểu | Mỗi key trong `tuning.txt` có chú thích đơn vị |
+| U10 | Settings | Hiện phần trăm; mỗi bước phát tiếng click |
+| U11 | ESC trên màn kết | Bỏ qua ESC khi đã kết thúc |
+| U12 | Fade làm nháy menu | Menu 0.15 s, gameplay 0.3 s |
+| U13 | Thanh tiến độ đè HUD | Thanh ở y=56 |
+| U14 | "[locked]" | "[locked - finish world N]" |
+| U15 | Phím chém một tay | J, K, F, Ctrl trái |
+
+### Bác bỏ / hoãn
+- **C2 (pack có điều khoản "không phân phối lại" đã có trong repo):** đã tồn tại từ trước, ngoài phạm vi; chỉ ghi rõ trong CREDITS.
+- **C8 (bỏ qua update cho segment ngoài màn hình):** chưa cần, vài nghìn lời gọi ảo mỗi frame.
+- **Nhạc Storyline cho Story / World Select (mục 4.10):** bỏ; nhạc menu đang phát xuyên suốt các menu, đổi nhạc giữa chừng gây giật. Chỉ dùng In Game 1/2/3 cho 3 thế giới.
+- **Hạt bụi khi tiếp đất (4.8):** bỏ; hạt chỉ dùng cho nhặt đồ, trúng đòn, golem vỡ, boss trúng đòn.
+
+### Kết luận Arbiter
+APPROVED với các sửa ở trên. Rủi ro còn lại: cảm giác đánh boss và 2 course mới chưa ai chơi thử; mọi con số nằm trong `tuning.txt` và file lưới.
