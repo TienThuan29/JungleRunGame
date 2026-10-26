@@ -18,6 +18,8 @@ struct ChunkDeleter { void operator()(Mix_Chunk* p) const; };
 struct MusicDeleter { void operator()(Mix_Music* p) const; };
 struct WindowDeleter { void operator()(SDL_Window* p) const { SDL_DestroyWindow(p); } };
 struct RendererDeleter { void operator()(SDL_Renderer* p) const { SDL_DestroyRenderer(p); } };
+struct ControllerDeleter { void operator()(SDL_GameController* p) const { SDL_GameControllerClose(p); } };
+struct SdlFreeDeleter { void operator()(void* p) const { SDL_free(p); } };  // strings SDL allocates (SDL_GetBasePath)
 
 using TexturePtr = std::unique_ptr<SDL_Texture, TextureDeleter>;
 using FontPtr = std::unique_ptr<TTF_Font, FontDeleter>;
@@ -25,6 +27,8 @@ using ChunkPtr = std::unique_ptr<Mix_Chunk, ChunkDeleter>;
 using MusicPtr = std::unique_ptr<Mix_Music, MusicDeleter>;
 using WindowPtr = std::unique_ptr<SDL_Window, WindowDeleter>;
 using RendererPtr = std::unique_ptr<SDL_Renderer, RendererDeleter>;
+using ControllerPtr = std::unique_ptr<SDL_GameController, ControllerDeleter>;
+using SdlString = std::unique_ptr<char, SdlFreeDeleter>;
 
 TexturePtr loadTexture(SDL_Renderer* r, const std::string& path, bool keyBlack = false);
 TexturePtr renderText(SDL_Renderer* r, TTF_Font* font, const std::string& text, SDL_Color color);

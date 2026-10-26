@@ -146,6 +146,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\core\Game.cpp" />
+    <ClCompile Include="src\core\SaveFile.cpp" />
+    <ClCompile Include="src\game\ArrowTrap.cpp" />
+    <ClCompile Include="src\game\GigaGolem.cpp" />
+    <ClCompile Include="src\game\Tuning.cpp" />
+    <ClCompile Include="src\scenes\SettingsScene.cpp" />
+    <ClCompile Include="src\scenes\WorldSelectScene.cpp" />
     <ClCompile Include="src\core\SdlHandles.cpp" />
     <ClCompile Include="src\game\EntityFactory.cpp" />
     <ClCompile Include="src\game\GameAssets.cpp" />
@@ -169,6 +175,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\core\Game.h" />
+    <ClInclude Include="src\core\SaveFile.h" />
+    <ClInclude Include="src\game\ArrowTrap.h" />
+    <ClInclude Include="src\game\Particles.h" />
+    <ClInclude Include="src\game\Tuning.h" />
     <ClInclude Include="src\core\SdlHandles.h" />
     <ClInclude Include="src\game\Config.h" />
     <ClInclude Include="src\game\Decoration.h" />

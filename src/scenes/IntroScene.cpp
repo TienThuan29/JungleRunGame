@@ -19,7 +19,8 @@ IntroScene::IntroScene(Game& g) : Scene(g, SceneId::Intro) {
 	SDL_Renderer* r = g.renderer();
 	typing_ = sdl::loadMusic("Resource\\Sound\\Sound Effects\\typing.mp3");
 	Mix_PlayMusic(typing_.get(), -1);
-	Mix_VolumeMusic(64);
+	g.settings().introSeen = true;  // later runs of world 1 skip the intro
+	g.save();
 	{
 		const sdl::FontPtr big = sdl::loadFont("Resource\\Fonts\\crazy-pixel.ttf", 80);
 		skip_ = sdl::renderText(r, big.get(), ">> Press [SPACE] to skip <<", color::white);
@@ -47,9 +48,10 @@ SceneId IntroScene::run() {
 	while (running()) {
 		SDL_Event e;
 		while (running() && SDL_PollEvent(&e)) {
+			if (game_.handleGlobal(e)) continue;
 			if (e.type == SDL_QUIT) go(SceneId::Quit);
-			else if (e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_ESCAPE) go(SceneId::Menu);
-			else if (e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_SPACE) go(SceneId::Gameplay);
+			else if (isKey(e, SDLK_ESCAPE)) go(SceneId::Menu);
+			else if (isConfirm(e)) go(SceneId::Gameplay);
 		}
 		if (!running()) break;
 		if (charNumber >= static_cast<int>(std::strlen(kStory[lineNumber]))) {

@@ -41,7 +41,13 @@ void StoryScene::handleEvent(const SDL_Event& e) {
 			go(SceneId::Menu);
 		}
 	}
-	else if (e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_ESCAPE) {
+	else if (isKey(e, SDLK_RIGHT) || isKey(e, SDLK_d)) {
+		current_ = 1;
+	}
+	else if (isKey(e, SDLK_LEFT) || isKey(e, SDLK_a)) {
+		current_ = 0;
+	}
+	else if (isKey(e, SDLK_ESCAPE) || isConfirm(e)) {
 		go(SceneId::Menu);
 	}
 }

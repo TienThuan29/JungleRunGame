@@ -54,6 +54,24 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\scenes\WorldSelectScene.cpp">
+      <Filter>Source Files\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\SettingsScene.cpp">
+      <Filter>Source Files\scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\Tuning.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\GigaGolem.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\ArrowTrap.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\SaveFile.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
     <ClCompile Include="src\core\Game.cpp">
       <Filter>Source Files\core</Filter>
     </ClCompile>
@@ -119,6 +137,18 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\game\Tuning.h">
+      <Filter>Source Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\Particles.h">
+      <Filter>Source Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\ArrowTrap.h">
+      <Filter>Source Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\SaveFile.h">
+      <Filter>Source Files\core</Filter>
+    </ClInclude>
     <ClInclude Include="src\core\Game.h">
       <Filter>Source Files\core</Filter>
     </ClInclude>

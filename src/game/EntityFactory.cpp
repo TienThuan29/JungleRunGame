@@ -1,4 +1,5 @@
 #include "game/EntityFactory.h"
+#include "game/ArrowTrap.h"
 #include "game/Decoration.h"
 #include "game/Pickup.h"
 #include "game/SmolGolem.h"
@@ -54,9 +55,13 @@ std::unique_ptr<Entity> makeEntity(int code, float x, float y) {
 	case 3: return std::make_unique<Tile>(SDL_FRect{ x, y, 3 * t, t }, SDL_Rect{ 320, 144, 113, 49 });
 	case 13: return std::make_unique<Pickup>(cell, PickupKind::FirstAid);
 	case 14: return std::make_unique<Pickup>(cell, PickupKind::Potion);
-	case 19: return std::make_unique<SmolGolem>(cell);
+	case 19: return std::make_unique<SmolGolem>(cell, false);
 	case 21: return std::make_unique<Pickup>(cell, PickupKind::Key);
 	case 22: return std::make_unique<Decoration>(cell);
+	case 23: return std::make_unique<Pickup>(cell, PickupKind::Checkpoint);
+	case 24: return std::make_unique<ArrowTrap>(cell, false);
+	case 25: return std::make_unique<ArrowTrap>(cell, true);
+	case 26: return std::make_unique<SmolGolem>(cell, true);
 	default: break;
 	}
 	for (const TrapRow& row : kTraps) {
@@ -65,6 +70,6 @@ std::unique_ptr<Entity> makeEntity(int code, float x, float y) {
 			return std::make_unique<Trap>(SDL_FRect{ x, y + s.yRows * t, t, s.hRows * t }, s);
 		}
 	}
-	return nullptr;  // unreachable: LevelLoader rejects codes outside 0-22
+	return nullptr;  // unreachable: LevelLoader rejects codes outside 0-26
 }
 }

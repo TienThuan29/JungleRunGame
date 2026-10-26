@@ -1,4 +1,5 @@
 #include "game/LevelLoader.h"
+#include <algorithm>
 #include <charconv>
 #include <fstream>
 #include <iterator>
@@ -6,7 +7,7 @@
 
 namespace jr {
 namespace {
-constexpr int kKeyTile = 21;
+constexpr int kKeyTile = 21, kCheckpointTile = 23;
 
 bool readLines(const std::string& path, std::vector<std::string>& lines) {
 	std::ifstream in(path, std::ios::binary);
@@ -91,19 +92,40 @@ int gridIndex(Course& c, const std::string& dir, const std::string& name, const 
 	return static_cast<int>(c.grids.size()) - 1;
 }
 
-bool hasKey(const Grid& g) {
+bool hasTile(const Grid& g, int code) {
 	for (const auto& row : g) {
 		for (int v : row) {
-			if (v == kKeyTile) return true;
+			if (v == code) return true;
 		}
 	}
 	return false;
 }
+
+// Largest x of a checkpoint in grid g placed at segment x (or -1).
+float lastCheckpoint(const Grid& g, float x) {
+	float best = -1;
+	for (const auto& row : g) {
+		for (int c = 0; c < cfg::kGridCols; ++c) {
+			if (row[c] == kCheckpointTile) best = SDL_max(best, x + static_cast<float>(c * cfg::kTile));
+		}
+	}
+	return best;
 }
 
-bool loadCourse(const std::string& dir, Course& out, std::string& error) {
+// True if ground platforms cover [from, to) without gaps.
+bool groundCovers(std::vector<float> xs, float from, float to) {
+	std::sort(xs.begin(), xs.end());
+	float reach = from;
+	for (float x : xs) {
+		if (x <= reach && x + cfg::kGroundW > reach) reach = x + cfg::kGroundW;
+	}
+	return reach >= to;
+}
+}
+
+bool loadCourse(const std::string& dir, const std::string& file, Course& out, std::string& error) {
 	out = Course{};
-	const std::string path = dir + "\\course.txt";
+	const std::string path = dir + "\\" + file;
 	std::vector<std::string> lines;
 	if (!readLines(path, lines)) {
 		error = "cannot open " + path + " (run the game from the repo folder)";
@@ -111,7 +133,7 @@ bool loadCourse(const std::string& dir, Course& out, std::string& error) {
 	}
 	float cursor = 0;
 	bool hasFinish = false;
-	size_t finishLine = 0;
+	size_t finishLine = 0, arenaLine = 0;
 	for (size_t i = 0; i < lines.size(); ++i) {
 		const auto t = tokens(lines[i]);
 		if (t.empty()) continue;
@@ -167,25 +189,80 @@ bool loadCourse(const std::string& dir, Course& out, std::string& error) {
 			hasFinish = true;
 			finishLine = i;
 		}
+		else if (t[0] == "arena" && t.size() == 1) {
+			if (out.arena > 0 || cursor <= 0) {
+				error = where + "arena: only one, and not at the very start";
+				return false;
+			}
+			out.arena = cursor;
+			arenaLine = i;
+		}
 		else {
-			error = where + "unknown line '" + lines[i] + "' (expected ground / map / onkey / finish)";
+			error = where + "unknown line '" + lines[i] + "' (expected ground / map / onkey / finish / arena)";
 			return false;
 		}
 	}
 	out.length = cursor;
-	if (!hasFinish) {
-		error = path + ": missing 'finish <pixels>' line";
+	if (hasFinish == (out.arena > 0)) {
+		error = path + ": needs exactly one of 'finish <pixels>' or 'arena'";
 		return false;
 	}
-	if (out.finish > out.length) {
+	if (hasFinish && out.finish > out.length) {
 		error = at(path, finishLine) + "finish " + std::to_string(static_cast<int>(out.finish)) +
 			" is beyond course length " + std::to_string(static_cast<int>(out.length));
 		return false;
 	}
+	if (out.arena > 0) {
+		if (!groundCovers(out.groundX, out.arena, out.arena + cfg::kWindowW)) {
+			error = at(path, arenaLine) + "arena needs at least 4 ground platforms right after it";
+			return false;
+		}
+		for (size_t s = 0; s < out.segments.size(); ++s) {
+			const float x = out.segments[s].x;
+			float cp = lastCheckpoint(out.grids[out.segments[s].grid], x);
+			if (static_cast<int>(s) == out.onKeySegment) cp = SDL_max(cp, lastCheckpoint(out.grids[out.onKeyGrid], x));
+			if (cp >= out.arena) {
+				error = at(path, arenaLine) + "a checkpoint (23) in " + out.gridNames[out.segments[s].grid] + " is past the arena";
+				return false;
+			}
+		}
+	}
 	bool key = false;
-	for (const auto& s : out.segments) key = key || hasKey(out.grids[s.grid]);
+	for (const auto& s : out.segments) key = key || hasTile(out.grids[s.grid], kKeyTile);
 	if (key && out.onKeySegment < 0) SDL_Log("warning: %s: a map has a key (21) but there is no onkey line", path.c_str());
 	if (!key && out.onKeySegment >= 0) SDL_Log("warning: %s: onkey is set but no map contains a key (21)", path.c_str());
+	return true;
+}
+
+bool loadWorlds(const std::string& dir, std::vector<WorldInfo>& out, std::string& error) {
+	out.clear();
+	const std::string path = dir + "\\worlds.txt";
+	std::vector<std::string> lines;
+	if (!readLines(path, lines)) {
+		error = "cannot open " + path + " (run the game from the repo folder)";
+		return false;
+	}
+	for (size_t i = 0; i < lines.size(); ++i) {
+		const auto t = tokens(lines[i]);
+		if (t.empty()) continue;
+		WorldInfo w;
+		if (t.size() < 3 || !toInt(t[1], w.music) || w.music < 1 || w.music > 3) {
+			error = at(path, i) + "expected '<course file> <music 1-3> <title>'";
+			return false;
+		}
+		if (out.size() == cfg::kMaxWorlds) {
+			error = at(path, i) + "at most " + std::to_string(cfg::kMaxWorlds) + " worlds";
+			return false;
+		}
+		w.course = t[0];
+		w.title = t[2];
+		for (size_t k = 3; k < t.size(); ++k) w.title += " " + t[k];
+		out.push_back(w);
+	}
+	if (out.empty()) {
+		error = path + ": no worlds listed";
+		return false;
+	}
 	return true;
 }
 }

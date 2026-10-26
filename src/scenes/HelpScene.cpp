@@ -13,6 +13,13 @@ HelpScene::HelpScene(Game& g) : Scene(g, SceneId::Help) {
 	sdl::loadTextureSeq(r, good_, "Resource\\Menu\\item\\good%d.bmp", true);
 	sdl::loadTextureSeq(r, running_, "Resource\\Menu\\running\\run%d.bmp", false);
 	sdl::loadTextureSeq(r, jumping_, "Resource\\Menu\\jump\\jump%d.bmp", false);
+	{
+		const sdl::FontPtr small = sdl::loadFont("Resource\\Fonts\\Kanit-Regular.ttf", 18);
+		for (const char* line : { "J / K / F: sword (golems, arrows, boss)", "Esc: pause      F11: fullscreen",
+				 "Star: checkpoint (Easy, Medium)", "Gamepad: A jump, X sword, Y retry,", "Start pause, B back" }) {
+			controls_.push_back(sdl::renderText(r, small.get(), line, color::mint));
+		}
+	}
 	const sdl::FontPtr font = sdl::loadFont("Resource\\Fonts\\Kanit-Light.ttf", 24);
 	back_ = std::make_unique<Button>(r, font.get(), "Return", SDL_Point{ 446, 503 }, color::black, color::aqua);
 	if (!bg_ || !back_->ok()) {
@@ -29,7 +36,7 @@ void HelpScene::handleEvent(const SDL_Event& e) {
 		Mix_PlayChannel(-1, game_.click(), 0);
 		go(SceneId::Menu);
 	}
-	else if (e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_ESCAPE) {
+	else if (isKey(e, SDLK_ESCAPE) || isConfirm(e)) {
 		go(SceneId::Menu);
 	}
 }
@@ -50,5 +57,9 @@ void HelpScene::render(SDL_Renderer* r) {
 	SDL_RenderCopy(r, running_[t / 120 % 8].get(), nullptr, &running);
 	SDL_RenderCopy(r, jumping_[t / 200 % 5].get(), nullptr, &jumping);
 	SDL_RenderCopy(r, ceiling_.get(), nullptr, &ceiling);
+	for (size_t i = 0; i < controls_.size(); ++i) {
+		const SDL_Rect d = sdl::sized(controls_[i].get(), 560, 150 + static_cast<int>(i) * 26);
+		SDL_RenderCopy(r, controls_[i].get(), nullptr, &d);
+	}
 }
 }
