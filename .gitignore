@@ -14,3 +14,4 @@ Release/
 .DS_Store
 save.txt
 save.txt.tmp
+build/
