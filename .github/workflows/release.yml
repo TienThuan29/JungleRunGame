@@ -27,7 +27,13 @@ jobs:
       - uses: microsoft/setup-msbuild@v2
 
       - name: Build
-        run: msbuild "Jungle Run.vcxproj" -p:Configuration=Release -p:Platform=x64 -m -nologo -v:minimal
+        run: |
+          msbuild "Jungle Run.vcxproj" -p:Configuration=Debug -p:Platform=x64 -m -nologo -v:minimal -warnaserror
+          msbuild "Jungle Run.vcxproj" -p:Configuration=Release -p:Platform=x64 -m -nologo -v:minimal -warnaserror
+
+      - name: Check levels and tuning
+        shell: cmd
+        run: tools\selfcheck.bat
 
       - name: Package
         shell: pwsh
@@ -38,7 +44,9 @@ jobs:
           Copy-Item *.dll $out
           Copy-Item Resource $out -Recurse
           if ((Get-ChildItem $out -Filter *.dll).Count -ne 8) { throw "expected 8 DLLs in $out" }
-          if (-not (Test-Path "$out/Resource/Levels/course.txt")) { throw "Resource/Levels missing" }
+          foreach ($f in "Levels/worlds.txt", "Levels/course.txt", "tuning.txt") {
+            if (-not (Test-Path "$out/Resource/$f")) { throw "Resource/$f missing" }
+          }
           Push-Location dist
           7z a -tzip JungleRun.zip JungleRun | Out-Null
           Pop-Location
